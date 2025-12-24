@@ -1,0 +1,102 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Contact Us", path: "/contact" },
+];
+
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+              <span className="text-primary-foreground font-display font-bold text-lg">D</span>
+            </div>
+            <div className="hidden sm:block">
+              <span className="font-display font-bold text-lg text-foreground">Digital</span>
+              <span className="font-display font-bold text-lg text-primary">Dynasty</span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={cn(
+                  "font-medium transition-colors duration-200 hover:text-primary",
+                  location.pathname === link.path
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Link to="/contact">
+              <Button variant="hero" size="lg">
+                Start Learning
+              </Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="lg:hidden pb-6 animate-fade-in">
+            <nav className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "font-medium py-2 transition-colors duration-200",
+                    location.pathname === link.path
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <Button variant="hero" className="w-full mt-2">
+                  Start Learning
+                </Button>
+              </Link>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
