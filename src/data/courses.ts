@@ -7,6 +7,7 @@ import aiVideoImg from "@/assets/courses/ai-video-creation.jpg";
 import videoEditingImg from "@/assets/courses/video-editing.jpg";
 import spokenWordImg from "@/assets/courses/spoken-word-poetry.jpg";
 import dataResellingImg from "@/assets/courses/data-reselling.jpg";
+import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.jpg";
 
 export interface Course {
   id: string;
@@ -17,6 +18,7 @@ export interface Course {
   intermediateTimeline: string;
   thumbnail: string;
   category: string;
+  isCustomRequest?: boolean;
 }
 
 export const courses: Course[] = [
@@ -154,5 +156,21 @@ export const courses: Course[] = [
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: dataResellingImg,
     category: "Business"
+  },
+  {
+    id: "tutorial-on-demand",
+    title: "Tutorial On Demand",
+    description: "Can't find what you're looking for? Request a custom tutorial tailored to your specific learning needs.",
+    whyTake: [
+      "Get personalized learning content",
+      "Learn at your own pace",
+      "Cover any digital skill you need",
+      "One-on-one guidance available"
+    ],
+    beginnerTimeline: "Custom",
+    intermediateTimeline: "Custom",
+    thumbnail: tutorialOnDemandImg,
+    category: "Special Request",
+    isCustomRequest: true
   }
 ];

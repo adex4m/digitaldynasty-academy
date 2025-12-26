@@ -1,4 +1,5 @@
-import { Clock, CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Clock, CheckCircle2, ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Course } from "@/data/courses";
 
@@ -60,10 +61,20 @@ const CourseCard = ({ course }: CourseCardProps) => {
         </div>
 
         {/* CTA */}
-        <Button variant="course" className="w-full mt-4 group/btn">
-          <span>Click here to find out cost</span>
-          <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-        </Button>
+        {course.isCustomRequest ? (
+          <Link to="/message">
+            <Button variant="course" className="w-full mt-4 group/btn">
+              <MessageCircle className="w-4 h-4" />
+              <span>Send Us a Message</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+            </Button>
+          </Link>
+        ) : (
+          <Button variant="course" className="w-full mt-4 group/btn">
+            <span>Enroll</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+          </Button>
+        )}
       </div>
     </div>
   );
