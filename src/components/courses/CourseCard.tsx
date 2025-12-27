@@ -69,6 +69,13 @@ const CourseCard = ({ course }: CourseCardProps) => {
               <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
             </Button>
           </Link>
+        ) : course.enrollUrl ? (
+          <a href={course.enrollUrl} target="_blank" rel="noopener noreferrer">
+            <Button variant="course" className="w-full mt-4 group/btn">
+              <span>Enroll</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+            </Button>
+          </a>
         ) : (
           <Button variant="course" className="w-full mt-4 group/btn">
             <span>Enroll</span>
