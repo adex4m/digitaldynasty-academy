@@ -19,6 +19,7 @@ export interface Course {
   thumbnail: string;
   category: string;
   isCustomRequest?: boolean;
+  enrollUrl?: string;
 }
 
 export const courses: Course[] = [
@@ -35,7 +36,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: socialMediaImg,
-    category: "Marketing"
+    category: "Marketing",
+    enrollUrl: "https://selar.com/5g37e63677"
   },
   {
     id: "content-writing",
@@ -155,7 +157,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: dataResellingImg,
-    category: "Business"
+    category: "Business",
+    enrollUrl: "https://selar.com/3a22755166"
   },
   {
     id: "tutorial-on-demand",
