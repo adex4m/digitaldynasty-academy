@@ -52,7 +52,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: contentWritingImg,
-    category: "Writing"
+    category: "Writing",
+    enrollUrl: "https://selar.com/ddicontentwriting"
   },
   {
     id: "copywriting",
@@ -127,7 +128,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: videoEditingImg,
-    category: "Video"
+    category: "Video",
+    enrollUrl: "https://selar.com/ddivideoediting"
   },
   {
     id: "spoken-word-poetry",
@@ -142,7 +144,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: spokenWordImg,
-    category: "Creative"
+    category: "Creative",
+    enrollUrl: "https://selar.com/ddispokenword-poetry"
   },
   {
     id: "data-reselling",
