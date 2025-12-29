@@ -68,7 +68,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: copywritingImg,
-    category: "Writing"
+    category: "Writing",
+    enrollUrl: "https://selar.com/ddi-copywriting"
   },
   {
     id: "graphic-design",
@@ -83,7 +84,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: graphicDesignImg,
-    category: "Design"
+    category: "Design",
+    enrollUrl: "https://selar.com/ddi-graphicdesign"
   },
   {
     id: "affiliate-marketing",
@@ -98,7 +100,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: affiliateMarketingImg,
-    category: "Business"
+    category: "Business",
+    enrollUrl: "https://selar.com/ddiaffiliatemarketing"
   },
   {
     id: "ai-video-creation",
@@ -113,7 +116,8 @@ export const courses: Course[] = [
     beginnerTimeline: "6 weeks",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: aiVideoImg,
-    category: "Video"
+    category: "Video",
+    enrollUrl: "https://selar.com/ddi-aivideocreation"
   },
   {
     id: "video-editing",
