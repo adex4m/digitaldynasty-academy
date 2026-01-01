@@ -38,11 +38,11 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   className={cn(
-                    "relative font-medium transition-all duration-300 hover:text-primary",
+                    "relative font-semibold text-base transition-all duration-300 hover:text-primary",
                     "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100",
                     location.pathname === link.path
                       ? "text-primary after:scale-x-100"
-                      : "text-muted-foreground"
+                      : "text-foreground"
                   )}
                 >
                   {link.name}
