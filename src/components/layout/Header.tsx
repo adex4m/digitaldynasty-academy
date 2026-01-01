@@ -32,7 +32,7 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation - beside logo */}
-            <nav className="hidden lg:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -52,7 +52,7 @@ const Header = () => {
           </div>
 
           {/* CTA Button & Theme Toggle */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <ThemeToggle />
             <Link to="/contact">
               <Button variant="hero" size="lg">
@@ -62,7 +62,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Toggle & Theme */}
-          <div className="lg:hidden flex items-center gap-2">
+          <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -76,7 +76,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden pb-6 animate-fade-in">
+          <div className="md:hidden pb-6 animate-fade-in">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
