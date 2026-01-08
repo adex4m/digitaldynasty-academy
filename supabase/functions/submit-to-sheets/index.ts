@@ -1,19 +1,30 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-  timestamp: string;
-}
+// Input validation schema
+const FormDataSchema = z.object({
+  name: z.string().min(1).max(100),
+  email: z.string().email().max(255),
+  phone: z.string().max(20).optional().default(''),
+  subject: z.string().min(1).max(200),
+  message: z.string().min(1).max(2000),
+  timestamp: z.string()
+});
+
+// Sanitize data for Google Sheets to prevent formula injection
+const sanitize = (value: string): string => {
+  if (!value) return value;
+  if (value.startsWith('=') || value.startsWith('+') || value.startsWith('-') || value.startsWith('@')) {
+    return "'" + value;
+  }
+  return value;
+};
 
 async function getAccessToken(serviceAccountKey: any): Promise<string> {
   const header = {
@@ -84,8 +95,8 @@ async function getAccessToken(serviceAccountKey: any): Promise<string> {
   const tokenData = await tokenResponse.json();
   
   if (!tokenData.access_token) {
-    console.error('Token response:', tokenData);
-    throw new Error('Failed to get access token');
+    console.error('Failed to get access token');
+    throw new Error('Authentication failed');
   }
   
   return tokenData.access_token;
@@ -100,29 +111,44 @@ serve(async (req) => {
   try {
     const serviceAccountKeyStr = Deno.env.get('GOOGLE_SERVICE_ACCOUNT_KEY');
     if (!serviceAccountKeyStr) {
-      throw new Error('GOOGLE_SERVICE_ACCOUNT_KEY not configured');
+      console.error('GOOGLE_SERVICE_ACCOUNT_KEY not configured');
+      return new Response(
+        JSON.stringify({ success: false, error: 'Service configuration error. Please try again later.' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
     const serviceAccountKey = JSON.parse(serviceAccountKeyStr);
-    const formData: FormData = await req.json();
+    
+    // Validate input data
+    const rawData = await req.json();
+    const validationResult = FormDataSchema.safeParse(rawData);
 
-    console.log('Received form data:', formData);
+    if (!validationResult.success) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Please check your form inputs and try again.' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const formData = validationResult.data;
+
+    console.log('Processing form submission');
 
     // Get access token
     const accessToken = await getAccessToken(serviceAccountKey);
-    console.log('Got access token');
 
     // Spreadsheet ID from the URL
     const spreadsheetId = '1FftUlSBnSTOD6L8poQEQC8qgWpCWOTCgZCgbjQVCvAc';
     
-    // Append data to sheet
+    // Append data to sheet with sanitized values
     const values = [[
-      formData.timestamp,
-      formData.name,
-      formData.email,
-      formData.phone || 'N/A',
-      formData.subject,
-      formData.message,
+      sanitize(formData.timestamp),
+      sanitize(formData.name),
+      sanitize(formData.email),
+      sanitize(formData.phone || 'N/A'),
+      sanitize(formData.subject),
+      sanitize(formData.message),
     ]];
 
     const appendUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Sheet1!A:F:append?valueInputOption=USER_ENTERED`;
@@ -137,21 +163,23 @@ serve(async (req) => {
     });
 
     const appendResult = await appendResponse.json();
-    console.log('Append result:', appendResult);
 
     if (!appendResponse.ok) {
-      throw new Error(`Failed to append to sheet: ${JSON.stringify(appendResult)}`);
+      console.error('Failed to append to sheet');
+      return new Response(
+        JSON.stringify({ success: false, error: 'Unable to process your request. Please try again later.' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
     return new Response(
-      JSON.stringify({ success: true, message: 'Data added to spreadsheet' }),
+      JSON.stringify({ success: true, message: 'Your message has been sent successfully.' }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   } catch (error: unknown) {
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    console.error('Error in submit-to-sheets function:', error);
+    console.error('Error processing submission');
     return new Response(
-      JSON.stringify({ success: false, error: errorMessage }),
+      JSON.stringify({ success: false, error: 'Unable to process your request. Please try again later.' }),
       { 
         status: 500, 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
