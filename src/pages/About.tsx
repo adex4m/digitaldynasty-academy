@@ -107,56 +107,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Goals */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Goals</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-              Where We're Headed
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-card p-8 rounded-xl shadow-card border-l-4 border-primary">
-              <h3 className="font-display font-bold text-xl text-foreground mb-4">Short-Term (1-3 Years)</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                  Become the #1 digital academy in Nigeria within 3 years
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                  Develop a functional website for streamlined registration
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                  Maintain flexible registration options
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-card p-8 rounded-xl shadow-card border-l-4 border-accent">
-              <h3 className="font-display font-bold text-xl text-foreground mb-4">Long-Term (3-5 Years)</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                  Achieve recognition as West Africa's leading digital academy
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                  Expand course offerings with integrated LMS
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                  Partner with top organizations for internships & placements
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-4 text-center">
