@@ -25,9 +25,9 @@ const Contact = () => {
     },
     {
       icon: Clock,
-      title: "Office Hours",
-      details: "9:00 AM - 5:00 PM",
-      description: "Monday to Friday (WAT)"
+      title: "Follow Us",
+      details: "Social Media",
+      description: "Connect with us on our social platforms"
     }
   ];
 
@@ -101,11 +101,11 @@ const Contact = () => {
               {[
                 {
                   question: "How do I enroll in a course?",
-                  answer: "Simply click on the 'Click here to find out cost' button on any course card to get enrollment details and pricing information."
+                  answer: "Simply click on the 'Click here to find out cost' button on any course card. You'll be directed to WhatsApp where you can get enrollment details, pricing information, and complete your registration."
                 },
                 {
                   question: "Are the courses online or in-person?",
-                  answer: "Our courses are primarily delivered online, making them accessible to learners worldwide. We also offer some in-person sessions in Nigeria."
+                  answer: "Our courses are delivered online, making them accessible to learners worldwide. In-person sessions are available exclusively for premium and custom course packages."
                 },
                 {
                   question: "What payment methods do you accept?",
