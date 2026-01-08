@@ -8,13 +8,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: "info@digitaldynasty.institute",
+      details: "digitaldynastyinstitute@gmail.com",
       description: "We'll respond within 24 hours"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: "+234 123 456 7890",
+      details: "+234 912 254 7613, +234 907 425 2461",
       description: "Mon-Fri, 9am-5pm WAT"
     },
     {

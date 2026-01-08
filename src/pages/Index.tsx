@@ -54,7 +54,7 @@ const Index = () => {
                 <div className="text-primary-foreground/70 text-sm">Courses</div>
               </div>
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-primary-foreground">1000+</div>
+                <div className="font-display text-3xl font-bold text-primary-foreground">100+</div>
                 <div className="text-primary-foreground/70 text-sm">Students</div>
               </div>
               <div className="text-center">
@@ -145,7 +145,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Link to="/services">
               <Button variant="hero" size="lg">
-                Explore All 9 Courses
+                Explore All Courses
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
