@@ -101,7 +101,7 @@ const Contact = () => {
               {[
                 {
                   question: "How do I enroll in a course?",
-                  answer: "Simply click on the 'Click here to find out cost' button on any course card. You'll be directed to WhatsApp where you can get enrollment details, pricing information, and complete your registration."
+                  answer: "Click on the \"Enroll\" button on your preferred course. You will be redirected to an external page to complete your purchase."
                 },
                 {
                   question: "Are the courses online or in-person?",
