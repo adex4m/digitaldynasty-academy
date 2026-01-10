@@ -160,7 +160,7 @@ const Index = () => {
             Ready to Start Your Digital Journey?
           </h2>
           <p className="text-primary-foreground/85 max-w-2xl mx-auto mb-8 text-lg">
-            Join thousands of learners who are transforming their careers with DigitalDynasty Institute.
+            Join hundreds of learners who are transforming their careers with DigitalDynasty Institute.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
