@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import socialFollowIcon from "@/assets/social-follow-icon.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -24,7 +25,8 @@ const Contact = () => {
       description: "Online classes available worldwide"
     },
     {
-      icon: Clock,
+      icon: null,
+      customIcon: socialFollowIcon,
       title: "Follow Us",
       details: "Social Media",
       description: "Connect with us on our social platforms"
@@ -58,8 +60,12 @@ const Contact = () => {
                 key={index}
                 className="bg-card p-6 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 text-center group"
               >
-                <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-7 h-7 text-primary-foreground" />
+                <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform overflow-hidden">
+                  {item.customIcon ? (
+                    <img src={item.customIcon} alt={item.title} className="w-8 h-8 object-contain invert" />
+                  ) : (
+                    item.icon && <item.icon className="w-7 h-7 text-primary-foreground" />
+                  )}
                 </div>
                 <h3 className="font-display font-bold text-foreground mb-2">{item.title}</h3>
                 <p className="text-primary font-semibold mb-1">{item.details}</p>
