@@ -136,39 +136,16 @@ const Index = () => {
             </Link>
           </div>
 
-          {/* Featured: Vibe-Coding */}
-          {courses.filter(c => c.id === "vibe-coding").map((course) => (
-            <div key={course.id} className="mb-8 bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-full overflow-hidden">
-                <img src={course.thumbnail} alt={course.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                <span className="absolute top-4 left-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                  🔥 New Course
-                </span>
-              </div>
-              <div className="p-8 flex flex-col justify-center space-y-4">
-                <span className="text-primary font-semibold text-sm uppercase tracking-wider">{course.category}</span>
-                <h3 className="font-display font-bold text-2xl text-card-foreground">{course.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{course.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {course.whyTake.map((item, i) => (
-                    <span key={i} className="bg-secondary text-secondary-foreground text-xs px-3 py-1.5 rounded-full">{item}</span>
-                  ))}
-                </div>
-                <a href={course.enrollUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="course" size="lg" className="group/btn mt-2">
-                    <span>Enroll Now</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
-                </a>
-              </div>
-            </div>
-          ))}
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {courses.filter(c => c.id !== "vibe-coding" && !c.isCustomRequest).slice(0, 6).map((course) => (
-              <CourseCard key={course.id} course={course} />
-            ))}
+            {(() => {
+              const filtered = courses.filter(c => !c.isCustomRequest);
+              const vibeCoding = filtered.find(c => c.id === "vibe-coding");
+              const others = filtered.filter(c => c.id !== "vibe-coding").slice(0, 5);
+              const displayed = vibeCoding ? [vibeCoding, ...others] : filtered.slice(0, 6);
+              return displayed.map((course) => (
+                <CourseCard key={course.id} course={course} />
+              ));
+            })()}
           </div>
 
           <div className="text-center mt-12">
