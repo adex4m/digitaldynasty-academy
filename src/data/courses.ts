@@ -7,6 +7,7 @@ import aiVideoImg from "@/assets/courses/ai-video-creation.jpg";
 import videoEditingImg from "@/assets/courses/video-editing.jpg";
 import spokenWordImg from "@/assets/courses/spoken-word-poetry.jpg";
 import dataResellingImg from "@/assets/courses/data-reselling.jpg";
+import vibeCodingImg from "@/assets/courses/vibe-coding.jpg";
 import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.jpg";
 
 export interface Course {
@@ -166,6 +167,22 @@ export const courses: Course[] = [
     thumbnail: dataResellingImg,
     category: "Business",
     enrollUrl: "https://selar.com/3a22755166"
+  },
+  {
+    id: "vibe-coding",
+    title: "Vibe-Coding / AI Web Development",
+    description: "Start building your dream website. Master the revolutionary art of \"vibe-coding\"—using Artificial Intelligence to translate your ideas into functional, stunning websites through conversational prompts. This course empowers you to bypass the steep learning curve of traditional coding and ship real-world digital projects in days, not months.",
+    whyTake: [
+      "Build websites using AI-powered tools",
+      "No prior coding experience needed",
+      "Ship real projects in days, not months",
+      "Stay ahead with cutting-edge AI skills"
+    ],
+    beginnerTimeline: "6 weeks",
+    intermediateTimeline: "Custom (based on your goals)",
+    thumbnail: vibeCodingImg,
+    category: "Technology",
+    enrollUrl: "https://selar.com/vibe-coding"
   },
   {
     id: "tutorial-on-demand",
