@@ -35,19 +35,32 @@ const Header = () => {
             {/* Desktop Navigation - beside logo */}
             <nav className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={cn(
-                    "relative font-semibold text-base transition-all duration-300 hover:text-primary",
-                    "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100",
-                    location.pathname === link.path
-                      ? "text-primary after:scale-x-100"
-                      : "text-foreground"
-                  )}
-                >
-                  {link.name}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 font-semibold text-base transition-all duration-300 hover:text-primary text-foreground"
+                  >
+                    {link.name}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={cn(
+                      "relative font-semibold text-base transition-all duration-300 hover:text-primary",
+                      "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100",
+                      location.pathname === link.path
+                        ? "text-primary after:scale-x-100"
+                        : "text-foreground"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </nav>
           </div>
