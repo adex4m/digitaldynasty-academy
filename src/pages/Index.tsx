@@ -21,12 +21,6 @@ const blogPosts = [
     description: "Explore how artificial intelligence is transforming the way we build websites and digital products.",
     url: BLOG_URL,
   },
-  {
-    title: "5 Tips for Effective Copywriting",
-    date: "March 5, 2026",
-    description: "Master the art of persuasive writing with these proven copywriting techniques used by professionals.",
-    url: BLOG_URL,
-  },
 ];
 
 const Index = () => {
