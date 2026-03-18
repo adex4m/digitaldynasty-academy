@@ -141,6 +141,52 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Latest Updates / Blog */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+            <div>
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Latest Updates</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
+                From Our Blog
+              </h2>
+            </div>
+            <a href={BLOG_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="group">
+                View All Posts
+                <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </Button>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <a
+                key={index}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="h-48 bg-muted flex items-center justify-center">
+                  <span className="text-muted-foreground text-sm">Blog Image</span>
+                </div>
+                <div className="p-6 space-y-3">
+                  <span className="text-muted-foreground text-xs">{post.date}</span>
+                  <h3 className="font-display font-bold text-lg text-card-foreground group-hover:text-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm line-clamp-2">{post.description}</p>
+                  <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold">
+                    Read More <ExternalLink className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Featured Courses */}
       <section className="py-20">
         <div className="container mx-auto px-4">

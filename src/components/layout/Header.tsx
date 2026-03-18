@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 import ddiLogo from "@/assets/ddi-logo-new.png";
 import ThemeToggle from "@/components/ThemeToggle";
 
-const navLinks = [
+const navLinks: { name: string; path: string; external?: boolean }[] = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Our Courses", path: "/services" },
   { name: "Blog", path: "https://digitaldynastyinstitute.blogspot.com", external: true },
   { name: "Contact Us", path: "/contact" },
-] as const;
+];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
