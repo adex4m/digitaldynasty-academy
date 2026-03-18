@@ -10,8 +10,9 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Our Courses", path: "/services" },
+  { name: "Blog", path: "https://digitaldynastyinstitute.blogspot.com", external: true },
   { name: "Contact Us", path: "/contact" },
-];
+] as const;
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
