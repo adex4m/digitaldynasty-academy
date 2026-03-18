@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ddiLogo from "@/assets/ddi-logo-new.png";
 import ThemeToggle from "@/components/ThemeToggle";
 
-const navLinks = [
+const navLinks: { name: string; path: string; external?: boolean }[] = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Our Courses", path: "/services" },
+  { name: "Blog", path: "https://digitaldynastyinstitute.blogspot.com", external: true },
   { name: "Contact Us", path: "/contact" },
 ];
 
@@ -34,19 +35,32 @@ const Header = () => {
             {/* Desktop Navigation - beside logo */}
             <nav className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={cn(
-                    "relative font-semibold text-base transition-all duration-300 hover:text-primary",
-                    "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100",
-                    location.pathname === link.path
-                      ? "text-primary after:scale-x-100"
-                      : "text-foreground"
-                  )}
-                >
-                  {link.name}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 font-semibold text-base transition-all duration-300 hover:text-primary text-foreground"
+                  >
+                    {link.name}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={cn(
+                      "relative font-semibold text-base transition-all duration-300 hover:text-primary",
+                      "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100",
+                      location.pathname === link.path
+                        ? "text-primary after:scale-x-100"
+                        : "text-foreground"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </nav>
           </div>
@@ -79,19 +93,33 @@ const Header = () => {
           <div className="md:hidden pb-6 animate-fade-in">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "font-medium py-2 transition-colors duration-200",
-                    location.pathname === link.path
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {link.name}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-1 font-medium py-2 transition-colors duration-200 text-muted-foreground"
+                  >
+                    {link.name}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "font-medium py-2 transition-colors duration-200",
+                      location.pathname === link.path
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button variant="hero" className="w-full mt-2">
