@@ -1,10 +1,33 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Users, Award, Globe } from "lucide-react";
+import { ArrowRight, GraduationCap, Users, Award, Globe, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import CourseCard from "@/components/courses/CourseCard";
 import { courses } from "@/data/courses";
 import heroBanner from "@/assets/hero-banner.jpg";
+
+const BLOG_URL = "https://digitaldynastyinstitute.blogspot.com";
+
+const blogPosts = [
+  {
+    title: "How to Start a Career in Social Media Management",
+    date: "March 15, 2026",
+    description: "Discover the essential skills and strategies you need to launch a successful career in social media management.",
+    url: BLOG_URL,
+  },
+  {
+    title: "The Rise of AI in Web Development",
+    date: "March 10, 2026",
+    description: "Explore how artificial intelligence is transforming the way we build websites and digital products.",
+    url: BLOG_URL,
+  },
+  {
+    title: "5 Tips for Effective Copywriting",
+    date: "March 5, 2026",
+    description: "Master the art of persuasive writing with these proven copywriting techniques used by professionals.",
+    url: BLOG_URL,
+  },
+];
 
 const Index = () => {
   return (
