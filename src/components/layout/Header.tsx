@@ -93,19 +93,33 @@ const Header = () => {
           <div className="md:hidden pb-6 animate-fade-in">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "font-medium py-2 transition-colors duration-200",
-                    location.pathname === link.path
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {link.name}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-1 font-medium py-2 transition-colors duration-200 text-muted-foreground"
+                  >
+                    {link.name}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "font-medium py-2 transition-colors duration-200",
+                      location.pathname === link.path
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button variant="hero" className="w-full mt-2">
