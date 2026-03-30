@@ -170,8 +170,15 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="h-48 bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">Blog Image</span>
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.imageAlt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width={800}
+                    height={512}
+                  />
                 </div>
                 <div className="p-6 space-y-3">
                   <span className="text-muted-foreground text-xs">{post.date}</span>
@@ -180,7 +187,7 @@ const Index = () => {
                   </h3>
                   <p className="text-muted-foreground text-sm line-clamp-2">{post.description}</p>
                   <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold">
-                    Read More <ExternalLink className="w-3.5 h-3.5" />
+                    {post.cta} <ExternalLink className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </a>
