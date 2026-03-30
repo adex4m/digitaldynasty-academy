@@ -60,6 +60,13 @@ const CourseCard = ({ course }: CourseCardProps) => {
           </div>
         </div>
 
+        {/* Custom Course CTA */}
+        <Link to="/message" className="block">
+          <p className="text-xs text-muted-foreground text-center italic hover:text-primary transition-colors">
+            Contact us for custom courses
+          </p>
+        </Link>
+
         {/* CTA */}
         {course.isCustomRequest ? (
           <Link to="/message">

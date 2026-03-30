@@ -5,21 +5,29 @@ import Layout from "@/components/layout/Layout";
 import CourseCard from "@/components/courses/CourseCard";
 import { courses } from "@/data/courses";
 import heroBanner from "@/assets/hero-banner.jpg";
+import blogAiVideo from "@/assets/blog-ai-video.jpg";
+import blogDigitalSkills from "@/assets/blog-digital-skills.jpg";
 
 const BLOG_URL = "https://digitaldynastyinstitute.blogspot.com";
 
 const blogPosts = [
   {
-    title: "How to Start a Career in Social Media Management",
-    date: "March 15, 2026",
-    description: "Discover the essential skills and strategies you need to launch a successful career in social media management.",
-    url: BLOG_URL,
+    title: "From Prompt to Profit: How AI Video Creation is Revolutionizing Modern Content Marketing",
+    date: "March 30, 2026",
+    description: "Stop spending weeks on video production. Discover how to leverage AI tools to create high-converting content at scale and turn simple prompts into high-ticket marketing assets.",
+    url: "https://digitaldynastyinstitute.blogspot.com/2026/03/from-prompt-to-profit-ai-video-marketing.html",
+    image: blogAiVideo,
+    imageAlt: "Person using AI to generate professional marketing video - DigitalDynasty Institute.",
+    cta: "Read More",
   },
   {
-    title: "The Rise of AI in Web Development",
-    date: "March 10, 2026",
-    description: "Explore how artificial intelligence is transforming the way we build websites and digital products.",
-    url: BLOG_URL,
+    title: "Why Digital High-Income Skills Are the New Global Currency",
+    date: "March 30, 2026",
+    description: "Traditional education is changing. Read our deep dive into why high-income digital skills are now the global standard for professional freedom and how you can adapt.",
+    url: "https://digitaldynastyinstitute.blogspot.com/2026/03/beyond-the-degree-digital-high-income-skills-2026.html",
+    image: blogDigitalSkills,
+    imageAlt: "Professional developing high-income digital skills at modern workstation - DigitalDynasty Institute.",
+    cta: "Read the Full Report",
   },
 ];
 
@@ -162,8 +170,15 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="h-48 bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">Blog Image</span>
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.imageAlt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width={800}
+                    height={512}
+                  />
                 </div>
                 <div className="p-6 space-y-3">
                   <span className="text-muted-foreground text-xs">{post.date}</span>
@@ -172,7 +187,7 @@ const Index = () => {
                   </h3>
                   <p className="text-muted-foreground text-sm line-clamp-2">{post.description}</p>
                   <span className="inline-flex items-center gap-1 text-primary text-sm font-semibold">
-                    Read More <ExternalLink className="w-3.5 h-3.5" />
+                    {post.cta} <ExternalLink className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </a>
