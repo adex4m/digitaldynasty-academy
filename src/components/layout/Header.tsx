@@ -10,6 +10,8 @@ const navLinks: { name: string; path: string; external?: boolean }[] = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Our Courses", path: "/services" },
+  { name: "Bootcamp & Events", path: "/bootcamp" },
+  { name: "Resources", path: "/resources" },
   { name: "Blog", path: "https://digitaldynastyinstitute.blogspot.com", external: true },
   { name: "Contact Us", path: "/contact" },
 ];
