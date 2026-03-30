@@ -40,6 +40,8 @@ const Footer = () => {
               <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
               <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link>
               <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Our Courses</Link>
+              <Link to="/bootcamp" className="text-muted-foreground hover:text-primary transition-colors">Bootcamp & Events</Link>
+              <Link to="/resources" className="text-muted-foreground hover:text-primary transition-colors">Resources</Link>
               <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</Link>
             </nav>
           </div>
