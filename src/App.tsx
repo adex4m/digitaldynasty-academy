@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Message from "./pages/Message";
+import Bootcamp from "./pages/Bootcamp";
+import Resources from "./pages/Resources";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
