@@ -87,7 +87,7 @@ const Bootcamp = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-green-500/10 text-green-600 border-green-500/20">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
               🔥 Currently Open for Registration
             </Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">

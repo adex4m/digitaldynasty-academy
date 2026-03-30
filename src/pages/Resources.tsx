@@ -3,7 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
 
-const resourceCategories = [
+interface Resource {
+  name: string;
+  type: string;
+  url?: string;
+}
+
+interface ResourceCategory {
+  icon: typeof BookOpen;
+  title: string;
+  description: string;
+  resources: Resource[];
+}
+
+const resourceCategories: ResourceCategory[] = [
   {
     icon: GraduationCap,
     title: "Free Learning Materials",
