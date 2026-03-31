@@ -39,7 +39,7 @@ const tiers = [
   {
     name: "Tier 3",
     title: "Elite Package",
-    price: "₦5,000",
+    price: "PAID",
     highlight: false,
     features: [
       "Includes Tier 1 & Tier 2",
