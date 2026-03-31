@@ -122,7 +122,7 @@ const Header = () => {
                   </Link>
                 )
               ))}
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
+              <Link to="/services" onClick={() => setIsOpen(false)}>
                 <Button variant="hero" className="w-full mt-2">
                   Start Learning
                 </Button>
