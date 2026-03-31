@@ -69,7 +69,7 @@ const Header = () => {
           {/* CTA Button & Theme Toggle */}
           <div className="hidden md:flex items-center gap-2">
             <ThemeToggle />
-            <Link to="/contact">
+            <Link to="/services">
               <Button variant="hero" size="lg">
                 Start Learning
               </Button>
@@ -122,7 +122,7 @@ const Header = () => {
                   </Link>
                 )
               ))}
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
+              <Link to="/services" onClick={() => setIsOpen(false)}>
                 <Button variant="hero" className="w-full mt-2">
                   Start Learning
                 </Button>
