@@ -51,8 +51,8 @@ const Terms = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Refund Policy:</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      To maintain our commitment to excellence and high-quality training, we enforce a strict refund policy. No refunds will be issued after the first week of the cohort start date.
-                    </p>
+                       A full refund shall be issued in the event that the registrant has not attended any classes or received any material benefit from the Academy's programs. In circumstances where the registrant has commenced participation and received instructional services, no monetary refund will be granted; however, the registrant shall retain the right to transfer their enrollment to a designated beneficiary of their choosing, at no additional cost, provided the original program term has not expired.
+                     </p>
                   </div>
                 </div>
               </div>
