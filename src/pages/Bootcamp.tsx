@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
-import { Calendar, ExternalLink, CheckCircle, Play, Bell, Clock, Users, MapPin } from "lucide-react";
+import { Calendar, ExternalLink, CheckCircle, Play, Bell, Clock, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
+import BootcampCard from "@/components/bootcamp/BootcampCard";
 import bootcampBanner from "@/assets/bootcamp-banner.jpg";
 import webinarImage from "@/assets/webinar-ai-replace.png";
+import socialMediaImg from "@/assets/bootcamp-social-media.jpg";
+import freelanceImg from "@/assets/bootcamp-freelance.jpg";
+import monetizationImg from "@/assets/bootcamp-monetization.jpg";
 
 const tiers = [
   {
@@ -53,9 +57,56 @@ const tiers = [
   },
 ];
 
+const upcomingBootcamps = [
+  {
+    title: "Social Media Optimization Bootcamp",
+    description:
+      "Master the art of building a powerful personal brand on social media. Learn content strategy, audience growth, engagement tactics, and how to turn your online presence into career opportunities.",
+    image: socialMediaImg,
+    status: "contact" as const,
+    highlights: [
+      "Content strategy & planning",
+      "Platform-specific optimization",
+      "Personal branding masterclass",
+      "Engagement & growth hacking",
+    ],
+  },
+  {
+    title: "Start Your Freelance Journey Bootcamp",
+    description:
+      "Everything you need to launch a successful freelance career — from setting up your profiles to landing your first clients and building a sustainable income stream.",
+    image: freelanceImg,
+    status: "contact" as const,
+    highlights: [
+      "Freelance platform setup",
+      "Proposal & pitch writing",
+      "Client management essentials",
+      "Pricing & negotiation tactics",
+    ],
+  },
+  {
+    title: "Skill Monetization Bootcamp",
+    description:
+      "Turn your digital skills into real income. Learn proven strategies for packaging, pricing, and selling your expertise through multiple revenue channels.",
+    image: monetizationImg,
+    status: "contact" as const,
+    highlights: [
+      "Identify monetizable skills",
+      "Build digital products & services",
+      "Multiple income stream strategies",
+      "Sales funnel fundamentals",
+    ],
+  },
+];
+
 const Bootcamp = () => {
-  const subscribeUrl = "/message?subject=" + encodeURIComponent("Future events subscription") +
-    "&message=" + encodeURIComponent("Hi DDI Team,\n\nI would like to subscribe to receive notifications about future bootcamps, webinars, and events from DigitalDynasty Institute.\n\nPlease add me to your events mailing list.\n\nThank you!");
+  const subscribeUrl =
+    "/message?subject=" +
+    encodeURIComponent("Future events subscription") +
+    "&message=" +
+    encodeURIComponent(
+      "Hi DDI Team,\n\nI would like to subscribe to receive notifications about future bootcamps, webinars, and events from DigitalDynasty Institute.\n\nPlease add me to your events mailing list.\n\nThank you!"
+    );
 
   return (
     <Layout>
@@ -83,7 +134,7 @@ const Bootcamp = () => {
         </div>
       </section>
 
-      {/* Current Bootcamp */}
+      {/* Current Bootcamp — Learn → Earn */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -101,7 +152,7 @@ const Bootcamp = () => {
             </div>
           </div>
 
-          {/* Banner Image */}
+          {/* Banner */}
           <div className="max-w-3xl mx-auto mb-16">
             <img
               src={bootcampBanner}
@@ -157,6 +208,27 @@ const Bootcamp = () => {
 
       {/* Past Events */}
       <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">More Bootcamps</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
+              Explore Our Other <span className="gradient-text">Bootcamps</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Intensive, hands-on programs designed to take you from learning to earning. Contact us to learn more about upcoming cohorts.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {upcomingBootcamps.map((bootcamp) => (
+              <BootcampCard key={bootcamp.title} {...bootcamp} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Past Events */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Past Events</span>
@@ -223,7 +295,7 @@ const Bootcamp = () => {
       </section>
 
       {/* Subscribe CTA */}
-      <section className="py-20">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center bg-card rounded-2xl p-10 shadow-card border border-border">
             <Bell className="w-12 h-12 text-primary mx-auto mb-6" />
