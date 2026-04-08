@@ -34,7 +34,7 @@ export const courses: Course[] = [
       "Master scheduling and analytics tools",
       "Develop client management skills"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: socialMediaImg,
     category: "Marketing",

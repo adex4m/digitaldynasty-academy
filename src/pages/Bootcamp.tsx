@@ -138,18 +138,12 @@ const Bootcamp = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-              🔥 Currently Open for Registration
-            </Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Removing the L from Learn → <span className="gradient-text">Earn</span> Bootcamp
             </h2>
-            <div className="flex items-center justify-center gap-4 text-muted-foreground">
-              <span className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4 text-primary" />
-                19 April – 25 April 2026
-              </span>
-            </div>
+            <p className="text-muted-foreground text-lg">
+              A one-week intensive bootcamp held at the end of every training cycle.
+            </p>
           </div>
 
           {/* Banner */}
