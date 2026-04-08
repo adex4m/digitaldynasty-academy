@@ -135,9 +135,9 @@ const Bootcamp = () => {
       </section>
 
       {/* Current Bootcamp — Learn → Earn */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Removing the L from Learn → <span className="gradient-text">Earn</span> Bootcamp
             </h2>
