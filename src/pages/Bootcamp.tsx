@@ -150,7 +150,7 @@ const Bootcamp = () => {
           <div className="max-w-3xl mx-auto mb-16">
             <img
               src={bootcampBanner}
-              alt="Removing the L from Learn to Earn Bootcamp - DigitalDynasty Institute, April 19-25 2026"
+              alt="Removing the L from Learn to Earn Bootcamp - DigitalDynasty Institute"
               className="w-full rounded-2xl shadow-card"
             />
           </div>
