@@ -34,7 +34,7 @@ export const courses: Course[] = [
       "Master scheduling and analytics tools",
       "Develop client management skills"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: socialMediaImg,
     category: "Marketing",
@@ -50,7 +50,7 @@ export const courses: Course[] = [
       "Create content that drives traffic",
       "Build a professional portfolio"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: contentWritingImg,
     category: "Writing",
@@ -66,7 +66,7 @@ export const courses: Course[] = [
       "Create compelling email sequences",
       "Command premium rates for your skills"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: copywritingImg,
     category: "Writing",
@@ -82,7 +82,7 @@ export const courses: Course[] = [
       "Create brand identities from scratch",
       "Build a stunning design portfolio"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: graphicDesignImg,
     category: "Design",
@@ -98,7 +98,7 @@ export const courses: Course[] = [
       "Master traffic generation strategies",
       "Create sustainable income streams"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: affiliateMarketingImg,
     category: "Business",
@@ -114,7 +114,7 @@ export const courses: Course[] = [
       "Produce professional-quality videos",
       "Stay ahead of industry trends"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: aiVideoImg,
     category: "Video",
@@ -130,7 +130,7 @@ export const courses: Course[] = [
       "Add professional effects & transitions",
       "Build a video editing career"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: videoEditingImg,
     category: "Video",
@@ -146,7 +146,7 @@ export const courses: Course[] = [
       "Build confidence on stage",
       "Connect deeply with audiences"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: spokenWordImg,
     category: "Creative",
@@ -162,7 +162,7 @@ export const courses: Course[] = [
       "Build a customer base",
       "Scale your business profitably"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: dataResellingImg,
     category: "Business",
@@ -178,7 +178,7 @@ export const courses: Course[] = [
       "Ship real projects in days, not months",
       "Stay ahead with cutting-edge AI skills"
     ],
-    beginnerTimeline: "6 weeks",
+    beginnerTimeline: "5 weeks + 3 weeks practical",
     intermediateTimeline: "Custom (based on your goals)",
     thumbnail: vibeCodingImg,
     category: "Technology",
