@@ -17,7 +17,7 @@ const blogPosts = [
     description: "Stop spending weeks on video production. Discover how to leverage AI tools to create high-converting content at scale and turn simple prompts into high-ticket marketing assets.",
     url: "https://digitaldynastyinstitute.blogspot.com/2026/03/from-prompt-to-profit-ai-video-marketing.html",
     image: blogAiVideo,
-    imageAlt: "Person using AI to generate professional marketing video - DigitalDynasty Institute.",
+    imageAlt: "Person using AI to generate professional marketing video - DigitalDynasty Imperium.",
     cta: "Read More",
   },
   {
@@ -26,7 +26,7 @@ const blogPosts = [
     description: "Traditional education is changing. Read our deep dive into why high-income digital skills are now the global standard for professional freedom and how you can adapt.",
     url: "https://digitaldynastyinstitute.blogspot.com/2026/03/beyond-the-degree-digital-high-income-skills-2026.html",
     image: blogDigitalSkills,
-    imageAlt: "Professional developing high-income digital skills at modern workstation - DigitalDynasty Institute.",
+    imageAlt: "Professional developing high-income digital skills at modern workstation - DigitalDynasty Imperium.",
     cta: "Read the Full Report",
   },
 ];
@@ -244,7 +244,7 @@ const Index = () => {
             Ready to Start Your Digital Journey?
           </h2>
           <p className="text-primary-foreground/85 max-w-2xl mx-auto mb-8 text-lg">
-            Join hundreds of learners who are transforming their careers with DigitalDynasty Institute.
+            Join hundreds of learners who are transforming their careers with DigitalDynasty Imperium.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">

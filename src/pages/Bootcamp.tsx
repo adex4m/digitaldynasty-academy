@@ -105,7 +105,7 @@ const Bootcamp = () => {
     encodeURIComponent("Future events subscription") +
     "&message=" +
     encodeURIComponent(
-      "Hi DDI Team,\n\nI would like to subscribe to receive notifications about future bootcamps, webinars, and events from DigitalDynasty Institute.\n\nPlease add me to your events mailing list.\n\nThank you!"
+      "Hi DDI Team,\n\nI would like to subscribe to receive notifications about future bootcamps, webinars, and events from DigitalDynasty Imperium.\n\nPlease add me to your events mailing list.\n\nThank you!"
     );
 
   return (
@@ -150,7 +150,7 @@ const Bootcamp = () => {
           <div className="max-w-3xl mx-auto mb-16">
             <img
               src={bootcampBanner}
-              alt="Removing the L from Learn to Earn Bootcamp - DigitalDynasty Institute"
+              alt="Removing the L from Learn to Earn Bootcamp - DigitalDynasty Imperium"
               className="w-full rounded-2xl shadow-card"
             />
           </div>
@@ -239,7 +239,7 @@ const Bootcamp = () => {
               <div className="relative">
                 <img
                   src={webinarImage}
-                  alt="Will AI Replace You? Webinar by DigitalDynasty Institute - March 1, 2026"
+                  alt="Will AI Replace You? Webinar by DigitalDynasty Imperium - March 1, 2026"
                   className="w-full aspect-video object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
@@ -297,7 +297,7 @@ const Bootcamp = () => {
               Don't Miss Our Next Event
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Subscribe to get notified about upcoming bootcamps, webinars, and exclusive learning opportunities from DigitalDynasty Institute.
+              Subscribe to get notified about upcoming bootcamps, webinars, and exclusive learning opportunities from DigitalDynasty Imperium.
             </p>
             <Link to={subscribeUrl}>
               <Button variant="hero" size="xl">

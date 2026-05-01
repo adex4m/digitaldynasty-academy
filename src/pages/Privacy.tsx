@@ -23,7 +23,7 @@ const Privacy = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                In alignment with our core value of Integrity, DigitalDynasty Institute is committed to protecting your personal data.
+                In alignment with our core value of Integrity, DigitalDynasty Imperium is committed to protecting your personal data.
               </p>
 
               {/* Section 1 */}
