@@ -23,7 +23,7 @@ const Terms = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto prose prose-lg dark:prose-invert">
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Welcome to DigitalDynasty Institute (DDI). By using our website and enrolling in our programs, you agree to the following terms:
+                Welcome to DigitalDynasty Imperium (DDI). By using our website and enrolling in our programs, you agree to the following terms:
               </p>
 
               {/* Section 1 */}

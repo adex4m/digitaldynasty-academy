@@ -21,7 +21,7 @@ const About = () => {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">About Us</span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
               About{" "}
-              <span className="gradient-text">DigitalDynasty Institute (DDI)</span>
+              <span className="gradient-text">DigitalDynasty Imperium (DDI)</span>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Building Legacies from the Ground Up
@@ -41,7 +41,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded on March 10, 2025, under the leadership of Eniola A. Hassan, DigitalDynasty Institute (DDI) began with a clear purpose: to bridge the gap between ambition and high-level digital expertise. What started with seven founding members offering diverse digital skills training has rapidly evolved into a movement for accessible education.
+                  Founded on March 10, 2025, under the leadership of Eniola A. Hassan, DigitalDynasty Imperium (DDI) began with a clear purpose: to bridge the gap between ambition and high-level digital expertise. What started with seven founding members offering diverse digital skills training has rapidly evolved into a movement for accessible education.
                 </p>
                 <p>
                   We didn't just want to create another training center; we set out to build a Dynasty—a place where the next generation of digital leaders (our Dynasts) could find their footing and thrive in the modern economy.
@@ -151,7 +151,7 @@ const About = () => {
               What We Stand For
             </h2>
             <p className="text-muted-foreground">
-              These principles guide everything we do at DigitalDynasty Institute.
+              These principles guide everything we do at DigitalDynasty Imperium.
             </p>
           </div>
 

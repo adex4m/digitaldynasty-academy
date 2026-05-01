@@ -119,7 +119,7 @@ const Contact = () => {
                 },
                 {
                   question: "Do I get a certificate after completing a course?",
-                  answer: "Yes! All students who successfully complete their course receive a certificate from DigitalDynasty Institute."
+                  answer: "Yes! All students who successfully complete their course receive a certificate from DigitalDynasty Imperium."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-card p-6 rounded-xl shadow-card">
