@@ -2,11 +2,9 @@ import socialMediaImg from "@/assets/courses/social-media-management.jpg";
 import contentWritingImg from "@/assets/courses/content-writing.jpg";
 import copywritingImg from "@/assets/courses/copywriting.jpg";
 import graphicDesignImg from "@/assets/courses/graphic-design.jpg";
-import affiliateMarketingImg from "@/assets/courses/affiliate-marketing.jpg";
 import aiVideoImg from "@/assets/courses/ai-video-creation.jpg";
 import videoEditingImg from "@/assets/courses/video-editing.jpg";
 import spokenWordImg from "@/assets/courses/spoken-word-poetry.jpg";
-import dataResellingImg from "@/assets/courses/data-reselling.jpg";
 import vibeCodingImg from "@/assets/courses/vibe-coding.jpg";
 import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.jpg";
 
@@ -89,22 +87,6 @@ export const courses: Course[] = [
     enrollUrl: "https://selar.com/ddi-graphicdesign"
   },
   {
-    id: "affiliate-marketing",
-    title: "Affiliate Marketing",
-    description: "Build passive income streams by promoting products and earning commissions online.",
-    whyTake: [
-      "Choose profitable niches",
-      "Build high-converting landing pages",
-      "Master traffic generation strategies",
-      "Create sustainable income streams"
-    ],
-    beginnerTimeline: "5 weeks + 3 weeks practical",
-    intermediateTimeline: "Custom (based on your goals)",
-    thumbnail: affiliateMarketingImg,
-    category: "Business",
-    enrollUrl: "https://selar.com/ddiaffiliatemarketing"
-  },
-  {
     id: "ai-video-creation",
     title: "AI Video Creation",
     description: "Leverage cutting-edge AI tools to create professional videos without expensive equipment.",
@@ -151,22 +133,6 @@ export const courses: Course[] = [
     thumbnail: spokenWordImg,
     category: "Creative",
     enrollUrl: "https://selar.com/ddispokenword-poetry"
-  },
-  {
-    id: "data-reselling",
-    title: "Data Reselling",
-    description: "Start a profitable data reselling business and earn consistent income.",
-    whyTake: [
-      "Understand the data business model",
-      "Find reliable suppliers",
-      "Build a customer base",
-      "Scale your business profitably"
-    ],
-    beginnerTimeline: "5 weeks + 3 weeks practical",
-    intermediateTimeline: "Custom (based on your goals)",
-    thumbnail: dataResellingImg,
-    category: "Business",
-    enrollUrl: "https://selar.com/3a22755166"
   },
   {
     id: "vibe-coding",
