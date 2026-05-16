@@ -135,22 +135,6 @@ export const courses: Course[] = [
     enrollUrl: "https://selar.com/ddispokenword-poetry"
   },
   {
-    id: "data-reselling",
-    title: "Data Reselling",
-    description: "Start a profitable data reselling business and earn consistent income.",
-    whyTake: [
-      "Understand the data business model",
-      "Find reliable suppliers",
-      "Build a customer base",
-      "Scale your business profitably"
-    ],
-    beginnerTimeline: "5 weeks + 3 weeks practical",
-    intermediateTimeline: "Custom (based on your goals)",
-    thumbnail: dataResellingImg,
-    category: "Business",
-    enrollUrl: "https://selar.com/3a22755166"
-  },
-  {
     id: "vibe-coding",
     title: "Vibe-Coding / AI Web Development",
     description: "Start building your dream website. Master the revolutionary art of \"vibe-coding\"—using Artificial Intelligence to translate your ideas into functional, stunning websites through conversational prompts. This course empowers you to bypass the steep learning curve of traditional coding and ship real-world digital projects in days, not months.",
