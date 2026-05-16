@@ -1,6 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Clock, CheckCircle2, ArrowRight, MessageCircle } from "lucide-react";
+import { Clock, CheckCircle2, ArrowRight, MessageCircle, Sparkles, Wallet, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Course } from "@/data/courses";
 
 interface CourseCardProps {
@@ -8,6 +17,32 @@ interface CourseCardProps {
 }
 
 const CourseCard = ({ course }: CourseCardProps) => {
+  const [open, setOpen] = useState(false);
+
+  const channels = [
+    {
+      key: "free",
+      icon: Sparkles,
+      title: "Free Entry",
+      description: "Join at no cost. Link coming soon.",
+      url: null as string | null,
+    },
+    {
+      key: "payg",
+      icon: Wallet,
+      title: "Pay-As-You-Go (PAYG)",
+      description: "Pay only for what you use. Link coming soon.",
+      url: null as string | null,
+    },
+    {
+      key: "paid",
+      icon: GraduationCap,
+      title: "Standard Paid",
+      description: "Full access with complete support and resources.",
+      url: course.enrollUrl ?? null,
+    },
+  ];
+
   return (
     <div className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
       {/* Thumbnail */}
@@ -28,7 +63,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
         <h3 className="font-display font-bold text-xl text-card-foreground group-hover:text-primary transition-colors">
           {course.title}
         </h3>
-        
+
         <p className="text-muted-foreground text-sm leading-relaxed">
           {course.description}
         </p>
@@ -60,34 +95,84 @@ const CourseCard = ({ course }: CourseCardProps) => {
           </div>
         </div>
 
-        {/* Custom Course CTA */}
+        {/* Custom Course CTA - button-styled */}
         <Link to="/message" className="block">
-          <p className="text-xs text-muted-foreground text-center italic hover:text-primary transition-colors">
-            Contact us for custom courses
-          </p>
+          <Button variant="outline" size="sm" className="w-full">
+            <MessageCircle className="w-4 h-4" />
+            <span>Contact us for custom courses</span>
+          </Button>
         </Link>
 
         {/* CTA */}
         {course.isCustomRequest ? (
           <Link to="/message">
-            <Button variant="course" className="w-full mt-4 group/btn">
+            <Button variant="course" className="w-full mt-2 group/btn">
               <MessageCircle className="w-4 h-4" />
               <span>Send Us a Message</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
             </Button>
           </Link>
-        ) : course.enrollUrl ? (
-          <a href={course.enrollUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="course" className="w-full mt-4 group/btn">
-              <span>Enroll</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-            </Button>
-          </a>
         ) : (
-          <Button variant="course" className="w-full mt-4 group/btn">
-            <span>Enroll</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-          </Button>
+          <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger asChild>
+              <Button variant="course" className="w-full mt-2 group/btn">
+                <span>Enroll</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md">
+              <DialogHeader>
+                <DialogTitle className="font-display">Choose your registration channel</DialogTitle>
+                <DialogDescription>
+                  Select how you'd like to enroll in {course.title}.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-3 mt-2">
+                {channels.map((ch) => {
+                  const Icon = ch.icon;
+                  const inner = (
+                    <div className="flex items-start gap-3 p-4 rounded-lg border border-border hover:border-primary hover:bg-accent/5 transition-all cursor-pointer">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                          <h4 className="font-semibold text-card-foreground">{ch.title}</h4>
+                          {!ch.url && (
+                            <span className="text-[10px] uppercase tracking-wider text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                              Soon
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-0.5">{ch.description}</p>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground mt-3 flex-shrink-0" />
+                    </div>
+                  );
+                  return ch.url ? (
+                    <a
+                      key={ch.key}
+                      href={ch.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setOpen(false)}
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    <button
+                      key={ch.key}
+                      type="button"
+                      className="w-full text-left opacity-70 cursor-not-allowed"
+                      disabled
+                    >
+                      {inner}
+                    </button>
+                  );
+                })}
+              </div>
+            </DialogContent>
+          </Dialog>
         )}
       </div>
     </div>
