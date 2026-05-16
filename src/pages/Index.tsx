@@ -35,6 +35,11 @@ const blogPosts = [
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="DigitalDynasty Imperium | Digital Skills Academy"
+        description="Learn social media, copywriting, design, video editing and more with West Africa's premier digital academy. Build your digital empire today."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         {/* Background */}
@@ -43,6 +48,9 @@ const Index = () => {
             src={heroBanner} 
             alt="Digital Dynasty students learning" 
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/80" />
         </div>
