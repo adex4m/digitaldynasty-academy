@@ -111,6 +111,11 @@ const Bootcamp = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Bootcamps & Events | DigitalDynasty Imperium"
+        description="Join our hands-on digital skills bootcamps — social media, freelance, monetization and the Removing the L from Learn bootcamp."
+        path="/bootcamp"
+      />
       {/* Hero */}
       <section className="py-20 gradient-hero-bg">
         <div className="container mx-auto px-4">
