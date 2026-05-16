@@ -2,11 +2,9 @@ import socialMediaImg from "@/assets/courses/social-media-management.jpg";
 import contentWritingImg from "@/assets/courses/content-writing.jpg";
 import copywritingImg from "@/assets/courses/copywriting.jpg";
 import graphicDesignImg from "@/assets/courses/graphic-design.jpg";
-import affiliateMarketingImg from "@/assets/courses/affiliate-marketing.jpg";
 import aiVideoImg from "@/assets/courses/ai-video-creation.jpg";
 import videoEditingImg from "@/assets/courses/video-editing.jpg";
 import spokenWordImg from "@/assets/courses/spoken-word-poetry.jpg";
-import dataResellingImg from "@/assets/courses/data-reselling.jpg";
 import vibeCodingImg from "@/assets/courses/vibe-coding.jpg";
 import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.jpg";
 
