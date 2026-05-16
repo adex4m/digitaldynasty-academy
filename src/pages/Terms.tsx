@@ -1,8 +1,14 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 const Terms = () => {
   return (
     <Layout>
+      <SEO
+        title="Terms of Service | DigitalDynasty Imperium"
+        description="Read the Terms of Service governing your use of DigitalDynasty Imperium's courses, content and services."
+        path="/terms"
+      />
       <div className="min-h-screen bg-background">
         {/* Header */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
