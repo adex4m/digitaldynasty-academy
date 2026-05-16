@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, GraduationCap, Users, Award, Globe, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import CourseCard from "@/components/courses/CourseCard";
 import { courses } from "@/data/courses";
 import heroBanner from "@/assets/hero-banner.jpg";
