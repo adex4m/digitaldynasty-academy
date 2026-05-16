@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Target, Eye, Heart, Users, Lightbulb, Shield, ArrowRight, Trophy, Rocket, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 const About = () => {
   const coreValues = [
@@ -14,6 +15,11 @@ const About = () => {
 
   return (
     <Layout>
+      <SEO
+        title="About Us | DigitalDynasty Imperium"
+        description="Discover the mission, vision and values behind DigitalDynasty Imperium — building digital legacies across West Africa."
+        path="/about"
+      />
       {/* Hero */}
       <section className="py-20 gradient-hero-bg">
         <div className="container mx-auto px-4">

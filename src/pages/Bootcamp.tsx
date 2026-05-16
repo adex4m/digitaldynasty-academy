@@ -3,6 +3,7 @@ import { Calendar, ExternalLink, CheckCircle, Play, Bell, Clock, Mail } from "lu
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import BootcampCard from "@/components/bootcamp/BootcampCard";
 import bootcampBanner from "@/assets/bootcamp-banner.jpg";
 import webinarImage from "@/assets/webinar-ai-replace.png";
