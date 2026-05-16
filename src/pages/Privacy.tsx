@@ -1,8 +1,14 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 const Privacy = () => {
   return (
     <Layout>
+      <SEO
+        title="Privacy Policy | DigitalDynasty Imperium"
+        description="Learn how DigitalDynasty Imperium collects, uses, and protects your personal data in compliance with NDPA."
+        path="/privacy"
+      />
       <div className="min-h-screen bg-background">
         {/* Header */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">

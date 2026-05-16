@@ -3,6 +3,7 @@ import { Calendar, ExternalLink, CheckCircle, Play, Bell, Clock, Mail } from "lu
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import BootcampCard from "@/components/bootcamp/BootcampCard";
 import bootcampBanner from "@/assets/bootcamp-banner.jpg";
 import webinarImage from "@/assets/webinar-ai-replace.png";
@@ -110,6 +111,11 @@ const Bootcamp = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Bootcamps & Events | DigitalDynasty Imperium"
+        description="Join our hands-on digital skills bootcamps — social media, freelance, monetization and the Removing the L from Learn bootcamp."
+        path="/bootcamp"
+      />
       {/* Hero */}
       <section className="py-20 gradient-hero-bg">
         <div className="container mx-auto px-4">

@@ -2,6 +2,7 @@ import { BookOpen, Video, FileText, Download, Wrench, ExternalLink, GraduationCa
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 
 interface Resource {
   name: string;
@@ -79,6 +80,11 @@ const resourceCategories: ResourceCategory[] = [
 const Resources = () => {
   return (
     <Layout>
+      <SEO
+        title="Free Resources | DigitalDynasty Imperium"
+        description="Free guides, eBooks, templates, webinar recordings and tools to grow your high-income digital skills."
+        path="/resources"
+      />
       {/* Hero */}
       <section className="py-20 gradient-hero-bg">
         <div className="container mx-auto px-4">
@@ -96,8 +102,9 @@ const Resources = () => {
       </section>
 
       {/* Resource Categories */}
-      <section className="py-20">
+      <section className="py-20" aria-labelledby="resource-categories-heading">
         <div className="container mx-auto px-4">
+          <h2 id="resource-categories-heading" className="sr-only">Resource Categories</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {resourceCategories.map((category) => {
               const Icon = category.icon;

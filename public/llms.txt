@@ -1,0 +1,20 @@
+# DigitalDynasty Imperium
+
+> West Africa's premier digital academy offering affordable, expert-led training in social media management, copywriting, graphic design, video editing, vibe-coding, and more.
+
+DigitalDynasty Imperium (DDI) trains learners across West Africa and beyond in high-income digital skills through online cohorts, bootcamps, and free learning resources.
+
+## Pages
+
+- [Home](/): Overview of the academy, featured courses, and latest blog updates.
+- [About](/about): Mission, vision, core values, and story of DigitalDynasty Imperium.
+- [Courses](/services): Full catalog of digital skills programs and learning paths.
+- [Bootcamp & Events](/bootcamp): Upcoming bootcamps, tiers, and event details.
+- [Resources](/resources): Free guides, templates, webinar recordings, and tools.
+- [Contact](/contact): Email, phone, FAQs, and ways to reach the team.
+- [Message](/message): Send a direct inquiry to the academy.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)

@@ -1,10 +1,37 @@
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
 import CourseCard from "@/components/courses/CourseCard";
 import { courses } from "@/data/courses";
 
 const Services = () => {
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "DigitalDynasty Imperium Courses",
+    itemListElement: courses.slice(0, 12).map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Course",
+        name: c.title,
+        description: c.description,
+        provider: {
+          "@type": "Organization",
+          name: "DigitalDynasty Imperium",
+          sameAs: "https://digitaldynastyacademy.lovable.app",
+        },
+      },
+    })),
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Courses | DigitalDynasty Imperium"
+        description="Explore our full catalog of digital skills courses: social media, copywriting, design, video editing, vibe-coding and more."
+        path="/services"
+        jsonLd={itemListJsonLd}
+      />
       {/* Hero */}
       <section className="py-20 gradient-hero-bg">
         <div className="container mx-auto px-4">
@@ -22,8 +49,9 @@ const Services = () => {
       </section>
 
       {/* Course Grid */}
-      <section className="py-20">
+      <section className="py-20" aria-labelledby="course-catalog-heading">
         <div className="container mx-auto px-4">
+          <h2 id="course-catalog-heading" className="sr-only">Course Catalog</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.map((course) => (
               <CourseCard key={course.id} course={course} />

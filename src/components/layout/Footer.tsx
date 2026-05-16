@@ -21,13 +21,13 @@ const Footer = () => {
               Empowering the next generation of digital professionals across West Africa with accessible, high-quality education.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/share/1Aq8nuVBn8/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/share/1Aq8nuVBn8/" target="_blank" rel="noopener noreferrer" aria-label="Follow DigitalDynasty Imperium on Facebook" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://www.instagram.com/digitaldynasty_institute/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/digitaldynasty_institute/" target="_blank" rel="noopener noreferrer" aria-label="Follow DigitalDynasty Imperium on Instagram" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="https://www.linkedin.com/company/digitaldynastyinstitute/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/company/digitaldynastyinstitute/" target="_blank" rel="noopener noreferrer" aria-label="Follow DigitalDynasty Imperium on LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
