@@ -3,6 +3,15 @@ import socialFollowIcon from "@/assets/social-follow-icon.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/SEO";
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact DigitalDynasty Imperium",
+  url: "https://digitaldynastyacademy.lovable.app/contact",
+};
+
 
 const Contact = () => {
   const contactInfo = [
@@ -35,6 +44,12 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Us | DigitalDynasty Imperium"
+        description="Reach DigitalDynasty Imperium by email, phone or message form. We respond within 24 hours, Mon-Fri, 9am-5pm WAT."
+        path="/contact"
+        jsonLd={contactJsonLd}
+      />
       {/* Hero */}
       <section className="py-20 gradient-hero-bg">
         <div className="container mx-auto px-4">
