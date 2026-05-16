@@ -87,22 +87,6 @@ export const courses: Course[] = [
     enrollUrl: "https://selar.com/ddi-graphicdesign"
   },
   {
-    id: "affiliate-marketing",
-    title: "Affiliate Marketing",
-    description: "Build passive income streams by promoting products and earning commissions online.",
-    whyTake: [
-      "Choose profitable niches",
-      "Build high-converting landing pages",
-      "Master traffic generation strategies",
-      "Create sustainable income streams"
-    ],
-    beginnerTimeline: "5 weeks + 3 weeks practical",
-    intermediateTimeline: "Custom (based on your goals)",
-    thumbnail: affiliateMarketingImg,
-    category: "Business",
-    enrollUrl: "https://selar.com/ddiaffiliatemarketing"
-  },
-  {
     id: "ai-video-creation",
     title: "AI Video Creation",
     description: "Leverage cutting-edge AI tools to create professional videos without expensive equipment.",
