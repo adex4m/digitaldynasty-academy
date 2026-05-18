@@ -11,7 +11,7 @@ interface BootcampCardProps {
 }
 
 const BootcampCard = ({ title, description, image, status, highlights }: BootcampCardProps) => {
-  const mailtoUrl = `mailto:digitaldynastyinstitute@gmail.com?subject=${encodeURIComponent(`Inquiry into ${title}`)}`;
+  const mailtoUrl = `mailto:digitaldynastyimperium@gmail.com?subject=${encodeURIComponent(`Inquiry into ${title}`)}`;
 
   return (
     <div className="bg-card rounded-2xl overflow-hidden shadow-card border border-border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">

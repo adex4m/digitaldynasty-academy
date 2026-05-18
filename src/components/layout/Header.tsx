@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import ddiLogo from "@/assets/ddi-logo-new.png";
+import ddiLogo from "@/assets/ddi-logo-mark.png";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks: { name: string; path: string; external?: boolean }[] = [
@@ -25,12 +25,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo & Desktop Navigation */}
           <div className="flex items-center gap-8">
-            <Link to="/" className="flex items-center">
-              <img 
-                src={ddiLogo} 
-                alt="DigitalDynasty Imperium" 
-                className="h-10 lg:h-12 w-auto"
-              />
+            <Link to="/" className="flex items-center" aria-label="DigitalDynasty Imperium home">
+              <span className="inline-flex items-center justify-center rounded-lg p-1.5 bg-primary dark:bg-transparent dark:p-0 transition-colors">
+                <img
+                  src={ddiLogo}
+                  alt="DigitalDynasty Imperium"
+                  className="h-8 lg:h-10 w-auto"
+                />
+              </span>
             </Link>
 
             {/* Desktop Navigation - beside logo */}
