@@ -31,8 +31,8 @@ const CourseCard = ({ course }: CourseCardProps) => {
       key: "payg",
       icon: Wallet,
       title: "Pay-As-You-Go (PAYG)",
-      description: "Pay only for what you use. Link coming soon.",
-      url: null as string | null,
+      description: "Pay only for what you use.",
+      url: "https://selar.com/ddi-payg" as string | null,
     },
     {
       key: "paid",
