@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import BootcampCard from "@/components/bootcamp/BootcampCard";
-import bootcampBanner from "@/assets/bootcamp-banner.jpg";
+
 import webinarImage from "@/assets/webinar-ai-replace.png";
 import socialMediaImg from "@/assets/bootcamp-social-media.jpg";
 import freelanceImg from "@/assets/bootcamp-freelance.jpg";
@@ -143,23 +143,18 @@ const Bootcamp = () => {
       {/* Current Bootcamp — Learn → Earn */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <Badge variant="outline" className="mb-4 border-primary text-primary">
+              <Calendar className="w-3.5 h-3.5 mr-1" /> Flagship Bootcamp
+            </Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Removing the L from Learn → <span className="gradient-text">Earn</span> Bootcamp
             </h2>
             <p className="text-muted-foreground text-lg">
-              A one-week intensive bootcamp held at the end of every training cycle.
+              A one-week intensive bootcamp held at the end of every training cycle. Pick the tier that matches your goals.
             </p>
           </div>
 
-          {/* Banner */}
-          <div className="max-w-3xl mx-auto mb-16">
-            <img
-              src={bootcampBanner}
-              alt="Removing the L from Learn to Earn Bootcamp - DigitalDynasty Imperium"
-              className="w-full rounded-2xl shadow-card"
-            />
-          </div>
 
           {/* Pricing Tiers */}
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
