@@ -61,9 +61,9 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-lg mb-6 text-foreground">Contact Us</h4>
             <div className="flex flex-col gap-4">
-              <a href="mailto:digitaldynastyinstitute@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:digitaldynastyimperium@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={18} />
-                <span className="text-sm">digitaldynastyinstitute@gmail.com</span>
+                <span className="text-sm">digitaldynastyimperium@gmail.com</span>
               </a>
               <a href="tel:+2349122547613" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Phone size={18} />
