@@ -24,8 +24,8 @@ const CourseCard = ({ course }: CourseCardProps) => {
       key: "free",
       icon: Sparkles,
       title: "Free Entry",
-      description: "Join at no cost. Link coming soon.",
-      url: null as string | null,
+      description: "Join our free class at no cost.",
+      url: "https://selar.com/ddifreeclass" as string | null,
     },
     {
       key: "payg",
