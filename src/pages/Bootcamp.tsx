@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import BootcampCard from "@/components/bootcamp/BootcampCard";
-import bootcampBanner from "@/assets/bootcamp-banner.jpg";
+
 import webinarImage from "@/assets/webinar-ai-replace.png";
 import socialMediaImg from "@/assets/bootcamp-social-media.jpg";
 import freelanceImg from "@/assets/bootcamp-freelance.jpg";
