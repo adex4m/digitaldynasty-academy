@@ -91,7 +91,7 @@ const Contact = () => {
           </div>
 
           {/* Leave a Message CTA */}
-          <div className="max-w-2xl mx-auto text-center bg-secondary p-12 rounded-2xl">
+          <div className="max-w-2xl mx-auto text-center bg-secondary p-6 sm:p-12 rounded-2xl">
             <MessageSquare className="w-16 h-16 text-primary mx-auto mb-6" />
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
               Want to Leave Us a Message?
@@ -99,8 +99,8 @@ const Contact = () => {
             <p className="text-muted-foreground mb-8">
               Have a specific question or inquiry? Fill out our message form and we'll get back to you as soon as possible.
             </p>
-            <Link to="/message">
-              <Button variant="hero" size="xl">
+            <Link to="/message" className="inline-block w-full sm:w-auto">
+              <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 Leave a Message
               </Button>
             </Link>
