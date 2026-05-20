@@ -300,8 +300,8 @@ const Bootcamp = () => {
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Subscribe to get notified about upcoming bootcamps, webinars, and exclusive learning opportunities from DigitalDynasty Imperium.
             </p>
-            <Link to={subscribeUrl}>
-              <Button variant="hero" size="xl">
+            <Link to={subscribeUrl} className="inline-block w-full sm:w-auto">
+              <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 <Bell className="w-5 h-5" />
                 Subscribe to Future Events
               </Button>
