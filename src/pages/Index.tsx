@@ -69,13 +69,13 @@ const Index = () => {
               <span className="gradient-text">Industry Experts</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/85 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
               West Africa's premier digital academy offering affordable, high-quality training in social media, design, writing, and more. Transform your skills. Transform your future.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/services">
-                <Button variant="hero-outline" size="xl" className="group">
+                <Button variant="hero" size="xl" className="group">
                   Explore Courses
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -88,18 +88,18 @@ const Index = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-8 border-t border-background/20">
+            <div className="flex flex-wrap gap-8 pt-8 border-t border-border">
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-primary-foreground">10+</div>
-                <div className="text-primary-foreground/70 text-sm">Courses</div>
+                <div className="font-display text-3xl font-bold text-foreground">10+</div>
+                <div className="text-muted-foreground text-sm">Courses</div>
               </div>
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-primary-foreground">100+</div>
-                <div className="text-primary-foreground/70 text-sm">Students</div>
+                <div className="font-display text-3xl font-bold text-foreground">100+</div>
+                <div className="text-muted-foreground text-sm">Students</div>
               </div>
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-primary-foreground">7+</div>
-                <div className="text-primary-foreground/70 text-sm">Expert Instructors</div>
+                <div className="font-display text-3xl font-bold text-foreground">7+</div>
+                <div className="text-muted-foreground text-sm">Expert Instructors</div>
               </div>
             </div>
           </div>
