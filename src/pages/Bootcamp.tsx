@@ -130,8 +130,8 @@ const Bootcamp = () => {
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               Join our intensive bootcamps and exclusive webinars designed to accelerate your digital career. Learn from industry experts and connect with a community of ambitious learners.
             </p>
-            <Link to={subscribeUrl}>
-              <Button variant="hero" size="xl">
+            <Link to={subscribeUrl} className="inline-block w-full sm:w-auto">
+              <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 <Bell className="w-5 h-5" />
                 Subscribe to Future Events
               </Button>
