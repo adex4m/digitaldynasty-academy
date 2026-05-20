@@ -43,33 +43,39 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         {/* Background */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[hsl(var(--background))]">
           <img 
             src={heroBanner} 
             alt="Digital Dynasty students learning" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-30 dark:opacity-20"
             fetchPriority="high"
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/80" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 50% at 80% 20%, hsl(var(--primary) / 0.55) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 10% 80%, hsl(var(--accent) / 0.35) 0%, transparent 60%), linear-gradient(180deg, hsl(var(--background) / 0.85), hsl(var(--background) / 0.95))",
+            }}
+          />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl space-y-8">
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Build Your Digital Empire with{" "}
-              <span className="text-background">Industry Experts</span>
+              <span className="gradient-text">Industry Experts</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/85 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
               West Africa's premier digital academy offering affordable, high-quality training in social media, design, writing, and more. Transform your skills. Transform your future.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/services">
-                <Button variant="hero-outline" size="xl" className="group">
+                <Button variant="hero" size="xl" className="group">
                   Explore Courses
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -82,18 +88,18 @@ const Index = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-8 border-t border-background/20">
+            <div className="flex flex-wrap gap-8 pt-8 border-t border-border">
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-primary-foreground">10+</div>
-                <div className="text-primary-foreground/70 text-sm">Courses</div>
+                <div className="font-display text-3xl font-bold text-foreground">10+</div>
+                <div className="text-muted-foreground text-sm">Courses</div>
               </div>
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-primary-foreground">100+</div>
-                <div className="text-primary-foreground/70 text-sm">Students</div>
+                <div className="font-display text-3xl font-bold text-foreground">100+</div>
+                <div className="text-muted-foreground text-sm">Students</div>
               </div>
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-primary-foreground">7+</div>
-                <div className="text-primary-foreground/70 text-sm">Expert Instructors</div>
+                <div className="font-display text-3xl font-bold text-foreground">7+</div>
+                <div className="text-muted-foreground text-sm">Expert Instructors</div>
               </div>
             </div>
           </div>
