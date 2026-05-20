@@ -116,6 +116,11 @@
     @apply border-border;
   }
 
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -125,8 +130,15 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 }
 
