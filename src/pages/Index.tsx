@@ -74,14 +74,14 @@ const Index = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/services">
-                <Button variant="hero" size="xl" className="group">
+              <Link to="/services" className="w-full sm:w-auto">
+                <Button variant="hero" size="xl" className="group w-full sm:w-auto">
                   Explore Courses
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link to="/about">
-                <Button variant="hero-outline" size="xl">
+              <Link to="/about" className="w-full sm:w-auto">
+                <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
                   Learn About Us
                 </Button>
               </Link>
@@ -262,13 +262,13 @@ const Index = () => {
             Join hundreds of learners who are transforming their careers with DigitalDynasty Imperium.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button variant="hero-outline" size="xl">
+            <Link to="/contact" className="w-full sm:w-auto">
+              <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
                 Contact Us Today
               </Button>
             </Link>
-            <Link to="/services">
-              <Button variant="hero-outline" size="xl">
+            <Link to="/services" className="w-full sm:w-auto">
+              <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
                 Browse Courses
               </Button>
             </Link>

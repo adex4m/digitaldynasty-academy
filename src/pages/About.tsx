@@ -237,6 +237,25 @@ const About = () => {
           cursor: pointer; text-decoration: none; transition: border-color 0.2s;
         }
         .ddi-page .ddi-btn-ghost:hover { border-color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 640px) {
+          .ddi-page .ddi-hero { padding: 5rem 1.25rem 3rem; min-height: 70svh; }
+          .ddi-page .ddi-hero-sub { margin-bottom: 2rem; }
+          .ddi-page .ddi-hero-cta { width: 100%; justify-content: center; padding: 14px 20px; }
+          .ddi-page .ddi-section { padding: 4rem 1.25rem; }
+          .ddi-page .ddi-sell-block { padding: 4rem 1.25rem; }
+          .ddi-page .ddi-who { padding: 4rem 1.25rem; }
+          .ddi-page .ddi-vision { padding: 4rem 1.25rem; }
+          .ddi-page .ddi-closing { padding: 4rem 1.25rem; }
+          .ddi-page .ddi-stats { padding: 2.5rem 1.25rem; }
+          .ddi-page .ddi-stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+          .ddi-page .ddi-stat-num { font-size: 36px; }
+          .ddi-page .ddi-phases-grid { grid-template-columns: 1fr; }
+          .ddi-page .ddi-closing-btns { flex-direction: column; gap: 10px; }
+          .ddi-page .ddi-btn-primary,
+          .ddi-page .ddi-btn-ghost { width: 100%; text-align: center; padding: 14px 20px; }
+          .ddi-page .ddi-skill-item { font-size: 15px; padding: 14px 0; }
+        }
       `}</style>
 
       <div className="ddi-page">
