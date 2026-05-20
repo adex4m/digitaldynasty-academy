@@ -84,7 +84,7 @@ const Contact = () => {
                   )}
                 </div>
                 <h3 className="font-display font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-primary font-semibold mb-1">{item.details}</p>
+                <p className="text-primary font-semibold mb-1 break-words">{item.details}</p>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
             ))}
