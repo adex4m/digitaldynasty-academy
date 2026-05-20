@@ -43,16 +43,22 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         {/* Background */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[hsl(var(--background))]">
           <img 
             src={heroBanner} 
             alt="Digital Dynasty students learning" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-30 dark:opacity-20"
             fetchPriority="high"
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/80" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 50% at 80% 20%, hsl(var(--primary) / 0.55) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 10% 80%, hsl(var(--accent) / 0.35) 0%, transparent 60%), linear-gradient(180deg, hsl(var(--background) / 0.85), hsl(var(--background) / 0.95))",
+            }}
+          />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
