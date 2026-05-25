@@ -142,9 +142,16 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Syne', 'Space Grotesk', sans-serif;
     overflow-wrap: break-word;
     word-wrap: break-word;
+  }
+
+  em.font-editorial, .font-editorial em {
+    font-style: italic;
+    font-family: 'Instrument Serif', serif;
+    color: hsl(var(--accent));
+    font-weight: 400;
   }
 }
 
