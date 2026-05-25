@@ -5,7 +5,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/SEO";
 import CourseCard from "@/components/courses/CourseCard";
 import { courses } from "@/data/courses";
-import heroBanner from "@/assets/hero-banner.jpg";
+
 import blogAiVideo from "@/assets/blog-ai-video.jpg";
 import blogDigitalSkills from "@/assets/blog-digital-skills.jpg";
 
@@ -40,43 +40,39 @@ const Index = () => {
         description="Learn social media, copywriting, design, video editing and more with West Africa's premier digital academy. Build your digital empire today."
         path="/"
       />
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center">
-        {/* Background */}
-        <div className="absolute inset-0 bg-[hsl(var(--background))]">
-          <img 
-            src={heroBanner} 
-            alt="Digital Dynasty students learning" 
-            className="w-full h-full object-cover opacity-30 dark:opacity-20"
-            fetchPriority="high"
-            width={1920}
-            height={1080}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse 60% 50% at 80% 20%, hsl(var(--primary) / 0.55) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 10% 80%, hsl(var(--accent) / 0.35) 0%, transparent 60%), linear-gradient(180deg, hsl(var(--background) / 0.85), hsl(var(--background) / 0.95))",
-            }}
-          />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl space-y-8">
-
-            <p className="text-[11px] font-medium tracking-[0.14em] uppercase text-accent">
+      {/* Hero Section — About-style dark */}
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundColor: "#0D0A1A", minHeight: "80svh" }}
+      >
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(73,34,140,0.45) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 10% 80%, rgba(123,79,191,0.2) 0%, transparent 60%)",
+          }}
+        />
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 flex flex-col justify-end" style={{ minHeight: "80svh", paddingTop: "8rem", paddingBottom: "4rem" }}>
+          <div className="max-w-3xl space-y-6">
+            <p style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#7B4FBF", fontFamily: "'DM Sans', sans-serif" }}>
               Digital Dynasty Imperium · Lagos, Nigeria
             </p>
-            <h1 className="font-display font-extrabold text-foreground leading-[1.05] tracking-tight" style={{ fontSize: "clamp(40px, 7vw, 88px)" }}>
-              Build your digital empire with{" "}
-              <em className="font-editorial">industry experts.</em>
+            <h1
+              className="font-display tracking-tight"
+              style={{ fontSize: "clamp(40px, 7vw, 88px)", fontWeight: 800, lineHeight: 1.05, color: "#FFFFFF" }}
+            >
+              Build your <em className="font-editorial" style={{ color: "#7B4FBF" }}>digital empire</em> with industry experts.
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            <p
+              className="max-w-2xl"
+              style={{ fontSize: "clamp(15px, 1.8vw, 19px)", fontWeight: 300, lineHeight: 1.75, color: "rgba(255,255,255,0.6)" }}
+            >
               West Africa's premier digital academy offering affordable, high-quality training in social media, design, writing, and more. Transform your skills. Transform your future.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link to="/services" className="w-full sm:w-auto">
                 <Button variant="hero" size="xl" className="group w-full sm:w-auto">
                   Explore Courses
@@ -89,25 +85,28 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-8 border-t border-border">
-              <div className="text-center">
-                <div className="font-display text-3xl font-bold text-foreground">10+</div>
-                <div className="text-muted-foreground text-sm">Courses</div>
-              </div>
-              <div className="text-center">
-                <div className="font-display text-3xl font-bold text-foreground">100+</div>
-                <div className="text-muted-foreground text-sm">Students</div>
-              </div>
-              <div className="text-center">
-                <div className="font-display text-3xl font-bold text-foreground">7+</div>
-                <div className="text-muted-foreground text-sm">Expert Instructors</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* Stats Band — solid purple */}
+      <section className="ddi-stats-band">
+        <div className="ddi-stats-inner">
+          <div>
+            <div className="ddi-stat-num">10+</div>
+            <div className="ddi-stat-label">Courses</div>
+          </div>
+          <div>
+            <div className="ddi-stat-num">100+</div>
+            <div className="ddi-stat-label">Students</div>
+          </div>
+          <div>
+            <div className="ddi-stat-num">7+</div>
+            <div className="ddi-stat-label">Expert Instructors</div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Why Choose Us */}
       <section className="py-20 bg-secondary">

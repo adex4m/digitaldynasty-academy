@@ -10,10 +10,8 @@ interface PageHeroProps {
 }
 
 /**
- * Unified hero used across all pages.
- * Editorial dark/cream surface with radial purple glow,
- * uppercase eyebrow, large Syne display headline with
- * optional Instrument Serif italic accent, sub copy, CTA slot.
+ * Unified About-style hero used across all pages.
+ * Always dark (#0D0A1A) with radial purple glow, regardless of theme.
  */
 const PageHero = ({
   eyebrow,
@@ -26,39 +24,60 @@ const PageHero = ({
   const isCenter = align === "center";
   return (
     <section
-      className={`relative overflow-hidden bg-background ${
+      className={`relative overflow-hidden ${
         size === "compact"
-          ? "pt-24 pb-16 sm:pt-28 sm:pb-20"
-          : "pt-28 pb-20 sm:pt-32 sm:pb-28"
+          ? "pt-28 pb-16 sm:pt-32 sm:pb-20"
+          : "pt-32 pb-24 sm:pt-40 sm:pb-32"
       }`}
+      style={{ backgroundColor: "#0D0A1A" }}
     >
-      {/* Radial glow */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 80% 20%, hsl(var(--primary) / 0.35) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 10% 80%, hsl(var(--accent) / 0.2) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(73,34,140,0.45) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 10% 80%, rgba(123,79,191,0.2) 0%, transparent 60%)",
         }}
       />
-      <div className="container mx-auto px-4 relative z-10">
-        <div
-          className={`max-w-3xl ${isCenter ? "mx-auto text-center" : ""} space-y-6`}
-        >
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className={`max-w-3xl ${isCenter ? "mx-auto text-center" : ""} space-y-6`}>
           {eyebrow && (
-            <p className="text-[11px] font-medium tracking-[0.14em] uppercase text-accent">
+            <p
+              className="font-sans"
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#7B4FBF",
+              }}
+            >
               {eyebrow}
             </p>
           )}
           <h1
-            className="font-display font-extrabold text-foreground leading-[1.05] tracking-tight"
-            style={{ fontSize: "clamp(36px, 6vw, 76px)" }}
+            className="font-display tracking-tight"
+            style={{
+              fontSize: "clamp(36px, 6vw, 80px)",
+              fontWeight: 800,
+              lineHeight: 1.05,
+              color: "#FFFFFF",
+            }}
           >
             {title}
           </h1>
           {subtitle && (
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-light max-w-2xl"
-               style={isCenter ? { marginLeft: "auto", marginRight: "auto" } : undefined}>
+            <p
+              className="max-w-2xl"
+              style={{
+                fontSize: "clamp(15px, 1.8vw, 19px)",
+                fontWeight: 300,
+                lineHeight: 1.75,
+                color: "rgba(255,255,255,0.6)",
+                marginLeft: isCenter ? "auto" : undefined,
+                marginRight: isCenter ? "auto" : undefined,
+              }}
+            >
               {subtitle}
             </p>
           )}
