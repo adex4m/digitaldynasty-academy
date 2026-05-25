@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 import CourseCard from "@/components/courses/CourseCard";
 import { courses } from "@/data/courses";
