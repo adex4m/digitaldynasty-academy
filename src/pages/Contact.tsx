@@ -51,21 +51,12 @@ const Contact = () => {
         path="/contact"
         jsonLd={contactJsonLd}
       />
-      {/* Hero */}
-      <section className="py-20 gradient-hero-bg">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Contact Us</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-              Let's Start Your{" "}
-              <span className="gradient-text">Digital Journey</span>
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Have questions about our courses or want to enroll? We're here to help you take the first step toward your digital career.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact Us"
+        title={<>Let's start your <em className="font-editorial">digital journey.</em></>}
+        subtitle="Have questions about our courses or want to enroll? We're here to help you take the first step toward your digital career."
+      />
+
 
       {/* Contact Info */}
       <section className="py-20" aria-labelledby="contact-info-heading">
