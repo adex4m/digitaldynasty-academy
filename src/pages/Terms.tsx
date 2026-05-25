@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 
 const Terms = () => {
@@ -10,19 +11,14 @@ const Terms = () => {
         path="/terms"
       />
       <div className="min-h-screen bg-background">
-        {/* Header */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Terms of Service
-              </h1>
-              <p className="text-muted-foreground">
-                Version 1.1 | Updated: January 2026
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Version 1.1 · Updated January 2026"
+          title={<>Terms of <em className="font-editorial">service.</em></>}
+          subtitle="The terms governing your use of DigitalDynasty Imperium's courses, content and services."
+          align="center"
+          size="compact"
+        />
+
 
         {/* Content */}
         <section className="py-16">

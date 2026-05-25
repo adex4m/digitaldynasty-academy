@@ -3,6 +3,7 @@ import { Calendar, ExternalLink, CheckCircle, Play, Bell, Clock, Mail } from "lu
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 import BootcampCard from "@/components/bootcamp/BootcampCard";
 
@@ -116,29 +117,19 @@ const Bootcamp = () => {
         description="Join our hands-on digital skills bootcamps — social media, freelance, monetization and the Removing the L from Learn bootcamp."
         path="/bootcamp"
       />
-      {/* Hero */}
-      <section className="py-20 gradient-hero-bg">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <Badge variant="outline" className="mb-4 border-primary text-primary">
-              <Calendar className="w-3.5 h-3.5 mr-1" /> Upcoming & Past Events
-            </Badge>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-              Bootcamps &{" "}
-              <span className="gradient-text">Events</span>
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Join our intensive bootcamps and exclusive webinars designed to accelerate your digital career. Learn from industry experts and connect with a community of ambitious learners.
-            </p>
-            <Link to={subscribeUrl} className="inline-block w-full sm:w-auto">
-              <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                <Bell className="w-5 h-5" />
-                Subscribe to Future Events
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Upcoming & Past Events"
+        title={<>Bootcamps & <em className="font-editorial">events.</em></>}
+        subtitle="Join our intensive bootcamps and exclusive webinars designed to accelerate your digital career. Learn from industry experts and connect with a community of ambitious learners."
+      >
+        <Link to={subscribeUrl} className="inline-block w-full sm:w-auto">
+          <Button variant="hero" size="xl" className="w-full sm:w-auto">
+            <Bell className="w-5 h-5" />
+            Subscribe to Future Events
+          </Button>
+        </Link>
+      </PageHero>
+
 
       {/* Current Bootcamp — Learn → Earn */}
       <section className="py-12">

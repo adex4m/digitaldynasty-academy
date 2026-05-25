@@ -2,6 +2,7 @@ import { BookOpen, Video, FileText, Download, Wrench, ExternalLink, GraduationCa
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 
 interface Resource {
@@ -85,21 +86,12 @@ const Resources = () => {
         description="Free guides, eBooks, templates, webinar recordings and tools to grow your high-income digital skills."
         path="/resources"
       />
-      {/* Hero */}
-      <section className="py-20 gradient-hero-bg">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Learn & Grow</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-              Free{" "}
-              <span className="gradient-text">Resources</span>
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Access our curated library of guides, templates, tools, and recordings to support your digital skills journey — all completely free.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Learn & Grow"
+        title={<>Free <em className="font-editorial">resources</em> for your journey.</>}
+        subtitle="Access our curated library of guides, templates, tools, and recordings to support your digital skills journey — all completely free."
+      />
+
 
       {/* Resource Categories */}
       <section className="py-20" aria-labelledby="resource-categories-heading">

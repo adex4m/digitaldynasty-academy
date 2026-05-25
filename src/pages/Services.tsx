@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 import CourseCard from "@/components/courses/CourseCard";
 import { courses } from "@/data/courses";
@@ -32,21 +33,12 @@ const Services = () => {
         path="/services"
         jsonLd={itemListJsonLd}
       />
-      {/* Hero */}
-      <section className="py-20 gradient-hero-bg">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Courses</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-              Master In-Demand{" "}
-              <span className="gradient-text">Digital Skills</span>
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              From social media management to video editing, our comprehensive courses are designed by industry experts to help you succeed in the digital world.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Courses"
+        title={<>Master in-demand <em className="font-editorial">digital skills.</em></>}
+        subtitle="From social media management to video editing, our comprehensive courses are designed by industry experts to help you succeed in the digital world."
+      />
+
 
       {/* Course Grid */}
       <section className="py-20" aria-labelledby="course-catalog-heading">
