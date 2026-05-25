@@ -3,6 +3,7 @@ import socialFollowIcon from "@/assets/social-follow-icon.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 
 const contactJsonLd = {
