@@ -11,19 +11,14 @@ const Privacy = () => {
         path="/privacy"
       />
       <div className="min-h-screen bg-background">
-        {/* Header */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Privacy Policy
-              </h1>
-              <p className="text-muted-foreground">
-                Version 1.1 | Updated: January 2026
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Version 1.1 · Updated January 2026"
+          title={<>Privacy <em className="font-editorial">policy.</em></>}
+          subtitle="How we collect, use, and protect your personal data in compliance with NDPA."
+          align="center"
+          size="compact"
+        />
+
 
         {/* Content */}
         <section className="py-16">
