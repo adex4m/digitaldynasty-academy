@@ -64,9 +64,12 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl space-y-8">
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Build Your Digital Empire with{" "}
-              <span className="gradient-text">Industry Experts</span>
+            <p className="text-[11px] font-medium tracking-[0.14em] uppercase text-accent">
+              Digital Dynasty Imperium · Lagos, Nigeria
+            </p>
+            <h1 className="font-display font-extrabold text-foreground leading-[1.05] tracking-tight" style={{ fontSize: "clamp(40px, 7vw, 88px)" }}>
+              Build your digital empire with{" "}
+              <em className="font-editorial">industry experts.</em>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
