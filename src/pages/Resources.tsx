@@ -2,6 +2,7 @@ import { BookOpen, Video, FileText, Download, Wrench, ExternalLink, GraduationCa
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
+import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 
 interface Resource {
