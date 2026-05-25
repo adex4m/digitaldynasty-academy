@@ -94,21 +94,12 @@ const Message = () => {
         description="Send DigitalDynasty Imperium a direct message. We respond to inquiries within 24 hours."
         path="/message"
       />
-      {/* Hero */}
-      <section className="py-20 gradient-hero-bg">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get in Touch</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-              Leave Us a{" "}
-              <span className="gradient-text">Message</span>
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Have a question, feedback, or want to learn more about our courses? Fill out the form below and we'll get back to you soon.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Get in Touch"
+        title={<>Leave us a <em className="font-editorial">message.</em></>}
+        subtitle="Have a question, feedback, or want to learn more about our courses? Fill out the form below and we'll get back to you soon."
+      />
+
 
       {/* Form */}
       <section className="py-20">
