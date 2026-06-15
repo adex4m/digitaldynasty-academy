@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import ddiLogo from "@/assets/ddi-logo-new.png";
 
 const Footer = () => {
   const headingStyle = {
@@ -23,16 +24,15 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: "#49228C" }}
-              >
-                <span className="font-display font-bold text-lg" style={{ color: "#FFFFFF" }}>D</span>
-              </div>
-              <div className="font-display font-bold text-lg">
-                <span style={{ color: "#FFFFFF" }}>Digital</span>
-                <span style={{ color: "#7B4FBF" }}>Dynasty</span>
+            <div className="flex items-center gap-3">
+              <img
+                src={ddiLogo}
+                alt="DigitalDynasty Imperium logo"
+                className="w-10 h-10 rounded-lg object-contain"
+              />
+              <div className="font-display font-bold text-lg leading-tight">
+                <span style={{ color: "#FFFFFF" }}>Digitaldynasty</span>{" "}
+                <span style={{ color: "#7B4FBF" }}>Imperium</span>
               </div>
             </div>
             <p style={{ ...linkStyle, lineHeight: 1.75 }}>
@@ -105,12 +105,12 @@ const Footer = () => {
             <h4 style={headingStyle}>Contact Us</h4>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:digitaldynastyimperium@gmail.com"
+                href="mailto:support@digitaldynasty.academy"
                 className="flex items-start gap-3 min-w-0"
                 style={linkStyle}
               >
                 <Mail size={18} className="shrink-0 mt-0.5" />
-                <span className="break-all">digitaldynastyimperium@gmail.com</span>
+                <span className="break-all">support@digitaldynasty.academy</span>
               </a>
               <a
                 href="tel:+2349122547613"
