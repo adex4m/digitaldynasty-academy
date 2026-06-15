@@ -9,15 +9,15 @@
      #49228C purple, #7B4FBF mid, #EDE5F8 soft, #FAF8F5 cream, #0D0A1A ink, #6B6580 muted */
   :root {
     --primary: 262 61% 34%;
-    --primary-foreground: 36 29% 97%;
+    --primary-foreground: 0 0% 100%;
     --primary-light: 266 46% 53%;
     --primary-dark: 262 65% 25%;
 
-    --background: 36 29% 97%;        /* cream #FAF8F5 */
-    --foreground: 250 44% 7%;        /* ink #0D0A1A */
+    --background: 0 0% 97%;          /* Light Grey #F7F7F7 — brand */
+    --foreground: 240 28% 14%;       /* Deep Dark #1A1A2E — brand */
 
     --card: 0 0% 100%;
-    --card-foreground: 250 44% 7%;
+    --card-foreground: 240 28% 14%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 250 44% 7%;
