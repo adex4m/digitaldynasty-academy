@@ -38,8 +38,9 @@ const Contact = () => {
       icon: null,
       customIcon: socialFollowIcon,
       title: "Follow Us",
-      details: "Social Media",
-      description: "Connect with us on our social platforms"
+      details: "@digitaldynastyimperium",
+      detailsHref: "https://www.linkedin.com/company/digitaldynastyinstitute/",
+      description: "Connect with us on LinkedIn and our other social platforms"
     }
   ];
 
@@ -76,7 +77,18 @@ const Contact = () => {
                   )}
                 </div>
                 <h3 className="font-display font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-primary font-semibold mb-1 break-words">{item.details}</p>
+                {item.detailsHref ? (
+                  <a
+                    href={item.detailsHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-semibold mb-1 break-words hover:underline inline-block"
+                  >
+                    {item.details}
+                  </a>
+                ) : (
+                  <p className="text-primary font-semibold mb-1 break-words">{item.details}</p>
+                )}
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
             ))}
