@@ -19,7 +19,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: "digitaldynastyimperium@gmail.com",
+      details: "support@digitaldynasty.academy",
       description: "We'll respond within 24 hours"
     },
     {

@@ -105,12 +105,12 @@ const Footer = () => {
             <h4 style={headingStyle}>Contact Us</h4>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:digitaldynastyimperium@gmail.com"
+                href="mailto:support@digitaldynasty.academy"
                 className="flex items-start gap-3 min-w-0"
                 style={linkStyle}
               >
                 <Mail size={18} className="shrink-0 mt-0.5" />
-                <span className="break-all">digitaldynastyimperium@gmail.com</span>
+                <span className="break-all">support@digitaldynasty.academy</span>
               </a>
               <a
                 href="tel:+2349122547613"
