@@ -9,53 +9,53 @@
      #49228C purple, #7B4FBF mid, #EDE5F8 soft, #FAF8F5 cream, #0D0A1A ink, #6B6580 muted */
   :root {
     --primary: 262 61% 34%;
-    --primary-foreground: 36 29% 97%;
+    --primary-foreground: 0 0% 100%;
     --primary-light: 266 46% 53%;
     --primary-dark: 262 65% 25%;
 
-    --background: 36 29% 97%;        /* cream #FAF8F5 */
-    --foreground: 250 44% 7%;        /* ink #0D0A1A */
+    --background: 0 0% 97%;          /* Light Grey #F7F7F7 — brand */
+    --foreground: 240 28% 14%;       /* Deep Dark #1A1A2E — brand */
 
     --card: 0 0% 100%;
-    --card-foreground: 250 44% 7%;
+    --card-foreground: 240 28% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 250 44% 7%;
+    --popover-foreground: 240 28% 14%;
 
-    --secondary: 265 58% 94%;        /* purple soft #EDE5F8 */
+    --secondary: 265 58% 94%;        /* Soft Purple #EDE5F8 */
     --secondary-foreground: 262 61% 34%;
 
-    --muted: 36 24% 93%;
-    --muted-foreground: 253 12% 45%; /* #6B6580 */
+    --muted: 0 0% 97%;               /* Light Grey #F7F7F7 */
+    --muted-foreground: 240 14% 38%; /* readable on light grey */
 
-    --accent: 266 46% 53%;           /* purple mid #7B4FBF */
+    --accent: 266 46% 53%;           /* Accent Purple #7B4FBF */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 262 25% 88%;
-    --input: 262 25% 88%;
+    --border: 0 0% 80%;              /* Mid Grey #CCCCCC */
+    --input: 0 0% 80%;
     --ring: 262 61% 34%;
 
     --radius: 0.75rem;
 
     --gradient-primary: linear-gradient(135deg, hsl(262 61% 34%), hsl(266 46% 53%));
-    --gradient-hero: linear-gradient(180deg, hsl(36 29% 97%) 0%, hsl(265 58% 96%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 97%) 0%, hsl(265 58% 96%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(265 58% 97%));
-    --gradient-dark: linear-gradient(135deg, hsl(250 44% 7%), hsl(251 39% 14%));
+    --gradient-dark: linear-gradient(135deg, hsl(240 28% 14%), hsl(251 39% 14%));
 
     --shadow-glow: 0 0 40px hsl(262 61% 34% / 0.2);
-    --shadow-card: 0 4px 20px hsl(250 44% 7% / 0.06);
+    --shadow-card: 0 4px 20px hsl(240 28% 14% / 0.06);
     --shadow-card-hover: 0 12px 40px hsl(262 61% 34% / 0.12);
 
-    --sidebar-background: 36 29% 97%;
-    --sidebar-foreground: 250 44% 7%;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 240 28% 14%;
     --sidebar-primary: 262 61% 34%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 265 58% 94%;
     --sidebar-accent-foreground: 262 61% 34%;
-    --sidebar-border: 262 25% 88%;
+    --sidebar-border: 0 0% 80%;
     --sidebar-ring: 262 61% 34%;
   }
 
@@ -127,11 +127,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'DM Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', 'Inter', sans-serif;
   }
 
   .font-editorial {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Poppins', serif;
     font-style: italic;
     font-weight: 400;
   }
@@ -142,14 +142,14 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', 'Space Grotesk', sans-serif;
+    font-family: 'Poppins', 'Poppins', sans-serif;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
 
   em.font-editorial, .font-editorial em {
     font-style: italic;
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Poppins', serif;
     color: hsl(var(--accent));
     font-weight: 400;
   }
@@ -195,7 +195,7 @@
     text-align: center;
   }
   .ddi-stats-band .ddi-stat-num {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: clamp(36px, 5vw, 52px);
     font-weight: 800;
     color: #fff;
@@ -203,7 +203,7 @@
     margin-bottom: 0.4rem;
   }
   .ddi-stats-band .ddi-stat-label {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
     color: rgba(255,255,255,0.6);
     line-height: 1.5;
@@ -219,7 +219,7 @@
     align-items: center;
     background: #EDE5F8;
     color: #49228C;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.06em;
@@ -230,7 +230,7 @@
 
   /* Eyebrow labels */
   .ddi-eyebrow {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.14em;

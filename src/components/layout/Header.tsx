@@ -37,7 +37,7 @@ const Header = () => {
               {navLinks.map((link) => {
                 const active = location.pathname === link.path;
                 const baseStyle = {
-                  fontFamily: "'Syne', sans-serif",
+                  fontFamily: "'Poppins', sans-serif",
                   fontWeight: 500,
                   fontSize: "15px",
                   color: active ? "#7B4FBF" : "#FFFFFF",
@@ -95,7 +95,7 @@ const Header = () => {
               {navLinks.map((link) => {
                 const active = location.pathname === link.path;
                 const linkStyle = {
-                  fontFamily: "'Syne', sans-serif",
+                  fontFamily: "'Poppins', sans-serif",
                   fontWeight: 500,
                   fontSize: "16px",
                   color: active ? "#7B4FBF" : "#FFFFFF",

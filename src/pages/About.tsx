@@ -29,7 +29,7 @@ const About = () => {
         path="/about"
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
 
         .ddi-page {
           --ddi-purple: #49228C;
@@ -37,11 +37,11 @@ const About = () => {
           --ddi-purple-soft: #EDE5F8;
           --ddi-dark: #0D0A1A;
           --ddi-dark-2: #1A1530;
-          --ddi-cream: #FAF8F5;
+          --ddi-cream: #F7F7F7;
           --ddi-white: #FFFFFF;
           --ddi-muted: #6B6580;
           --ddi-border: rgba(73,34,140,0.12);
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
           background: var(--ddi-cream);
           color: var(--ddi-dark);
           overflow-x: hidden;
@@ -80,13 +80,13 @@ const About = () => {
           text-transform: uppercase; color: var(--ddi-purple-mid); margin-bottom: 1.5rem;
         }
         .ddi-page .ddi-hero-title {
-          font-family: 'Syne', sans-serif;
+          font-family: 'Poppins', sans-serif;
           font-size: clamp(42px, 7vw, 96px);
           font-weight: 800; line-height: 1.0;
           color: var(--ddi-white); margin-bottom: 2rem; max-width: 900px;
         }
         .ddi-page .ddi-hero-title em {
-          font-family: 'Instrument Serif', serif;
+          font-family: 'Poppins', serif;
           font-style: italic; color: var(--ddi-purple-mid);
         }
         .ddi-page .ddi-hero-sub {
@@ -96,7 +96,7 @@ const About = () => {
         .ddi-page .ddi-hero-cta {
           display: inline-flex; align-items: center; gap: 10px;
           background: var(--ddi-purple); color: #fff;
-          font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+          font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
           padding: 16px 32px; border-radius: 4px; text-decoration: none;
           border: none; cursor: pointer; transition: background 0.2s; width: fit-content;
         }
@@ -109,12 +109,12 @@ const About = () => {
           text-transform: uppercase; color: var(--ddi-purple); margin-bottom: 1rem;
         }
         .ddi-page .ddi-h2 {
-          font-family: 'Syne', sans-serif;
+          font-family: 'Poppins', sans-serif;
           font-size: clamp(30px, 4vw, 52px); font-weight: 700; line-height: 1.1;
           color: var(--ddi-dark); margin-bottom: 1.5rem;
         }
         .ddi-page .ddi-h2 em {
-          font-family: 'Instrument Serif', serif; font-style: italic;
+          font-family: 'Poppins', serif; font-style: italic;
           color: var(--ddi-purple-mid); font-weight: 400;
         }
         .ddi-page .ddi-body {
@@ -135,7 +135,7 @@ const About = () => {
         .ddi-page .ddi-skill-item {
           display: flex; align-items: center; justify-content: space-between;
           padding: 18px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08);
-          font-family: 'Syne', sans-serif; font-size: clamp(15px, 1.8vw, 18px);
+          font-family: 'Poppins', sans-serif; font-size: clamp(15px, 1.8vw, 18px);
           font-weight: 500; color: var(--ddi-white); transition: color 0.2s; cursor: default;
         }
         .ddi-page .ddi-skill-item:hover { color: var(--ddi-purple-mid); }
@@ -154,9 +154,9 @@ const About = () => {
           transition: background 0.25s; cursor: default;
         }
         .ddi-page .ddi-phase-card:hover { background: var(--ddi-purple-soft); }
-        .ddi-page .ddi-phase-num { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ddi-purple-mid); }
+        .ddi-page .ddi-phase-num { font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ddi-purple-mid); }
         .ddi-page .ddi-phase-weeks { font-size: 11px; color: var(--ddi-muted); font-weight: 400; }
-        .ddi-page .ddi-phase-title { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--ddi-dark); line-height: 1.3; }
+        .ddi-page .ddi-phase-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; color: var(--ddi-dark); line-height: 1.3; }
         .ddi-page .ddi-phase-desc { font-size: 13.5px; line-height: 1.7; color: var(--ddi-muted); }
 
         .ddi-page .ddi-stats { background: var(--ddi-purple); padding: 3rem 2rem; }
@@ -165,7 +165,7 @@ const About = () => {
           display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
           gap: 2rem; text-align: center;
         }
-        .ddi-page .ddi-stat-num { font-family: 'Syne', sans-serif; font-size: 48px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 0.4rem; }
+        .ddi-page .ddi-stat-num { font-family: 'Poppins', sans-serif; font-size: 48px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 0.4rem; }
         .ddi-page .ddi-stat-label { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
 
         .ddi-page .ddi-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
@@ -181,7 +181,7 @@ const About = () => {
           display: flex; align-items: center; justify-content: center;
           margin-bottom: 1.25rem; font-size: 20px; color: var(--ddi-purple);
         }
-        .ddi-page .ddi-why-card h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--ddi-dark); margin-bottom: 0.6rem; }
+        .ddi-page .ddi-why-card h3 { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: var(--ddi-dark); margin-bottom: 0.6rem; }
         .ddi-page .ddi-why-card p { font-size: 14px; line-height: 1.75; color: var(--ddi-muted); }
 
         .ddi-page .ddi-who { background: var(--ddi-dark-2); padding: 6rem 2rem; }
@@ -196,7 +196,7 @@ const About = () => {
         .ddi-page .ddi-values { display: flex; flex-direction: column; gap: 0; margin-top: 1rem; }
         .ddi-page .ddi-value-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
         .ddi-page .ddi-value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ddi-purple-mid); margin-top: 7px; flex-shrink: 0; }
-        .ddi-page .ddi-value-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+        .ddi-page .ddi-value-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px; }
         .ddi-page .ddi-value-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.4); }
         .ddi-page .ddi-personas { display: flex; flex-direction: column; gap: 12px; }
         .ddi-page .ddi-persona-chip {
@@ -205,13 +205,13 @@ const About = () => {
           transition: background 0.2s; cursor: default;
         }
         .ddi-page .ddi-persona-chip:hover { background: rgba(73,34,140,0.25); }
-        .ddi-page .ddi-persona-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: #fff; }
+        .ddi-page .ddi-persona-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: #fff; }
         .ddi-page .ddi-persona-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
 
         .ddi-page .ddi-vision { background: var(--ddi-cream); padding: 6rem 2rem; text-align: center; }
         .ddi-page .ddi-vision-inner { max-width: 800px; margin: 0 auto; }
         .ddi-page .ddi-vision-quote {
-          font-family: 'Instrument Serif', serif; font-style: italic;
+          font-family: 'Poppins', serif; font-style: italic;
           font-size: clamp(24px, 3.5vw, 42px); line-height: 1.4;
           color: var(--ddi-dark); margin-bottom: 1.5rem;
         }
@@ -220,19 +220,19 @@ const About = () => {
 
         .ddi-page .ddi-closing { background: var(--ddi-purple); padding: 6rem 2rem; text-align: center; }
         .ddi-page .ddi-closing-inner { max-width: 680px; margin: 0 auto; }
-        .ddi-page .ddi-closing h2 { font-family: 'Syne', sans-serif; font-size: clamp(28px, 4vw, 52px); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
+        .ddi-page .ddi-closing h2 { font-family: 'Poppins', sans-serif; font-size: clamp(28px, 4vw, 52px); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
         .ddi-page .ddi-closing p { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
         .ddi-page .ddi-closing-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
         .ddi-page .ddi-btn-primary {
           background: #fff; color: var(--ddi-purple);
-          font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+          font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
           padding: 16px 32px; border-radius: 4px; border: none; cursor: pointer;
           text-decoration: none; transition: opacity 0.2s;
         }
         .ddi-page .ddi-btn-primary:hover { opacity: 0.9; }
         .ddi-page .ddi-btn-ghost {
           background: transparent; color: #fff;
-          font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+          font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
           padding: 16px 32px; border-radius: 4px; border: 1.5px solid rgba(255,255,255,0.35);
           cursor: pointer; text-decoration: none; transition: border-color 0.2s;
         }
