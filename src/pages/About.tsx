@@ -122,25 +122,25 @@ const About = () => {
           color: var(--ddi-muted); max-width: 640px;
         }
 
-        .ddi-page .ddi-sell-block { background: var(--ddi-dark); padding: 5rem 2rem; }
+        .ddi-page .ddi-sell-block { background: var(--ddi-cream); padding: 5rem 2rem; }
         .ddi-page .ddi-sell-inner {
           max-width: 1100px; margin: 0 auto;
           display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
         }
         @media (max-width: 720px) { .ddi-page .ddi-sell-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
-        .ddi-page .ddi-sell-block .ddi-eyebrow { color: var(--ddi-purple-mid); }
-        .ddi-page .ddi-sell-block .ddi-h2 { color: var(--ddi-white); }
-        .ddi-page .ddi-sell-block .ddi-body { color: rgba(255,255,255,0.55); }
+        .ddi-page .ddi-sell-block .ddi-eyebrow { color: var(--ddi-purple); }
+        .ddi-page .ddi-sell-block .ddi-h2 { color: var(--ddi-dark); }
+        .ddi-page .ddi-sell-block .ddi-body { color: var(--ddi-muted); }
         .ddi-page .ddi-skills-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
         .ddi-page .ddi-skill-item {
           display: flex; align-items: center; justify-content: space-between;
-          padding: 18px 0; border-bottom: 0.5px solid rgba(255,255,255,0.08);
+          padding: 18px 0; border-bottom: 0.5px solid var(--ddi-border);
           font-family: 'Poppins', sans-serif; font-size: clamp(15px, 1.8vw, 18px);
-          font-weight: 500; color: var(--ddi-white); transition: color 0.2s; cursor: default;
+          font-weight: 500; color: var(--ddi-dark); transition: color 0.2s; cursor: default;
         }
-        .ddi-page .ddi-skill-item:hover { color: var(--ddi-purple-mid); }
-        .ddi-page .ddi-skill-arrow { font-size: 12px; color: rgba(255,255,255,0.2); transition: color 0.2s, transform 0.2s; }
-        .ddi-page .ddi-skill-item:hover .ddi-skill-arrow { color: var(--ddi-purple-mid); transform: translateX(4px); }
+        .ddi-page .ddi-skill-item:hover { color: var(--ddi-purple); }
+        .ddi-page .ddi-skill-arrow { font-size: 12px; color: var(--ddi-muted); transition: color 0.2s, transform 0.2s; }
+        .ddi-page .ddi-skill-item:hover .ddi-skill-arrow { color: var(--ddi-purple); transform: translateX(4px); }
 
         .ddi-page .ddi-phases { background: var(--ddi-cream); }
         .ddi-page .ddi-phases-grid {
@@ -184,29 +184,29 @@ const About = () => {
         .ddi-page .ddi-why-card h3 { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: var(--ddi-dark); margin-bottom: 0.6rem; }
         .ddi-page .ddi-why-card p { font-size: 14px; line-height: 1.75; color: var(--ddi-muted); }
 
-        .ddi-page .ddi-who { background: var(--ddi-dark-2); padding: 6rem 2rem; }
+        .ddi-page .ddi-who { background: var(--ddi-cream); padding: 6rem 2rem; border-top: 1px solid var(--ddi-border); }
         .ddi-page .ddi-who-inner {
           max-width: 1100px; margin: 0 auto;
           display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
         }
         @media (max-width: 720px) { .ddi-page .ddi-who-inner { grid-template-columns: 1fr; gap: 3rem; } }
-        .ddi-page .ddi-who .ddi-eyebrow { color: var(--ddi-purple-mid); }
-        .ddi-page .ddi-who .ddi-h2 { color: #fff; margin-bottom: 1rem; }
-        .ddi-page .ddi-who .ddi-body { color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; max-width: 100%; }
+        .ddi-page .ddi-who .ddi-eyebrow { color: var(--ddi-purple); }
+        .ddi-page .ddi-who .ddi-h2 { color: var(--ddi-dark); margin-bottom: 1rem; }
+        .ddi-page .ddi-who .ddi-body { color: var(--ddi-muted); margin-bottom: 1.5rem; max-width: 100%; }
         .ddi-page .ddi-values { display: flex; flex-direction: column; gap: 0; margin-top: 1rem; }
-        .ddi-page .ddi-value-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
-        .ddi-page .ddi-value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ddi-purple-mid); margin-top: 7px; flex-shrink: 0; }
-        .ddi-page .ddi-value-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px; }
-        .ddi-page .ddi-value-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.4); }
+        .ddi-page .ddi-value-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 0.5px solid var(--ddi-border); }
+        .ddi-page .ddi-value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ddi-purple); margin-top: 7px; flex-shrink: 0; }
+        .ddi-page .ddi-value-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--ddi-dark); margin-bottom: 3px; }
+        .ddi-page .ddi-value-desc { font-size: 13px; line-height: 1.65; color: var(--ddi-muted); }
         .ddi-page .ddi-personas { display: flex; flex-direction: column; gap: 12px; }
         .ddi-page .ddi-persona-chip {
-          background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.1); border-radius: 6px;
+          background: var(--ddi-white); border: 0.5px solid var(--ddi-border); border-radius: 6px;
           padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 4px;
           transition: background 0.2s; cursor: default;
         }
-        .ddi-page .ddi-persona-chip:hover { background: rgba(73,34,140,0.25); }
-        .ddi-page .ddi-persona-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: #fff; }
-        .ddi-page .ddi-persona-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+        .ddi-page .ddi-persona-chip:hover { background: var(--ddi-purple-soft); }
+        .ddi-page .ddi-persona-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--ddi-dark); }
+        .ddi-page .ddi-persona-desc { font-size: 13px; color: var(--ddi-muted); line-height: 1.5; }
 
         .ddi-page .ddi-vision { background: var(--ddi-cream); padding: 6rem 2rem; text-align: center; }
         .ddi-page .ddi-vision-inner { max-width: 800px; margin: 0 auto; }
@@ -420,7 +420,7 @@ const About = () => {
             </div>
 
             <div>
-              <p style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1.25rem" }} className="ddi-reveal">
+              <p style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ddi-muted)", marginBottom: "1.25rem" }} className="ddi-reveal">
                 Who we build for
               </p>
               <div className="ddi-personas">
