@@ -37,7 +37,7 @@ const About = () => {
           --ddi-purple-soft: #EDE5F8;
           --ddi-dark: #0D0A1A;
           --ddi-dark-2: #1A1530;
-          --ddi-cream: #FAF8F5;
+          --ddi-cream: #F7F7F7;
           --ddi-white: #FFFFFF;
           --ddi-muted: #6B6580;
           --ddi-border: rgba(73,34,140,0.12);
