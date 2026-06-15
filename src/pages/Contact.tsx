@@ -15,7 +15,14 @@ const contactJsonLd = {
 
 
 const Contact = () => {
-  const contactInfo = [
+  const contactInfo: Array<{
+    icon: typeof Mail | null;
+    customIcon?: string;
+    title: string;
+    details: string;
+    detailsHref?: string;
+    description: string;
+  }> = [
     {
       icon: Mail,
       title: "Email Us",
