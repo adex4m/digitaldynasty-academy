@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react
 
 const Footer = () => {
   const headingStyle = {
-    fontFamily: "'Syne', sans-serif",
+    fontFamily: "'Poppins', sans-serif",
     fontSize: "13px",
     fontWeight: 700,
     letterSpacing: "0.08em",
@@ -12,7 +12,7 @@ const Footer = () => {
     marginBottom: "1.25rem",
   };
   const linkStyle = {
-    fontFamily: "'DM Sans', sans-serif",
+    fontFamily: "'Inter', sans-serif",
     fontSize: "14px",
     color: "rgba(255,255,255,0.5)",
     transition: "color 0.2s",
@@ -132,7 +132,7 @@ const Footer = () => {
           className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           style={{ borderTop: "0.5px solid rgba(255,255,255,0.08)" }}
         >
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>
             © {new Date().getFullYear()} DigitalDynasty Imperium. All rights reserved.
           </p>
           <div className="flex gap-6">
