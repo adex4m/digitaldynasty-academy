@@ -264,7 +264,7 @@ const About = () => {
         <section className="ddi-hero">
           <div className="ddi-hero-bg" />
           <div style={{ position: "relative", zIndex: 1 }}>
-            <p className="ddi-hero-eyebrow ddi-reveal">Digital Dynasty Imperium · Lagos, Nigeria</p>
+            <p className="ddi-hero-eyebrow ddi-reveal">Digitaldynasty Imperium · Lagos, Nigeria</p>
             <h1 className="ddi-hero-title ddi-reveal ddi-reveal-delay-1">
               We don't sell courses.<br />
               We sell <em>career independence.</em>
@@ -300,6 +300,10 @@ const About = () => {
                   "Graphic Design",
                   "Video Editing & AI Video Creation",
                   "Web Development",
+                  "Spoken Word & Poetry",
+                  "Prompt Engineering (Custom Course)",
+                  "Ghostwriting (Custom Course)",
+                  "Other Custom Courses (On Demand)",
                 ].map((skill) => (
                   <li key={skill} className="ddi-skill-item">
                     {skill}
@@ -396,7 +400,7 @@ const About = () => {
               <p className="ddi-eyebrow ddi-reveal">Who we are</p>
               <h2 className="ddi-h2 ddi-reveal ddi-reveal-delay-1">Not a classroom.<br /><em>A movement.</em></h2>
               <p className="ddi-body ddi-reveal ddi-reveal-delay-2">
-                Digital Dynasty Imperium is a Lagos-based career transformation programme for Nigerian youths aged 18–40. We call our students Dynasts — because the word carries weight. A Dynast isn't a passive learner. A Dynast is someone building something that lasts.
+                Digitaldynasty Imperium is a Lagos-based career transformation programme for Nigerian youths aged 18–40. We call our students Dynasts — because the word carries weight. A Dynast isn't a passive learner. A Dynast is someone building something that lasts.
               </p>
               <p className="ddi-body ddi-reveal ddi-reveal-delay-3">
                 Our coaches aren't academics behind desks. They're digital professionals who have walked the path and know exactly what it takes to earn from it.
