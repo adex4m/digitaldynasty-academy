@@ -1,4 +1,4 @@
-import { BookOpen, Video, FileText, Download, Wrench, ExternalLink, GraduationCap, Lightbulb } from "lucide-react";
+import { BookOpen, Video, FileText, Wrench, ExternalLink, GraduationCap, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
@@ -97,46 +97,47 @@ const Resources = () => {
       <section className="py-20" aria-labelledby="resource-categories-heading">
         <div className="container mx-auto px-4">
           <h2 id="resource-categories-heading" className="sr-only">Resource Categories</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {resourceCategories.map((category) => {
               const Icon = category.icon;
+              const linkedResource = category.resources.find((r) => r.url);
+              const exploreHref =
+                linkedResource?.url ||
+                "https://selar.com/m/digitaldynasty-imperium?category=ddi-digital-products";
+              const ctaLabel = linkedResource
+                ? linkedResource.type === "Recording"
+                  ? "Watch Recording"
+                  : "Read Article"
+                : "Explore";
               return (
                 <div
                   key={category.title}
-                  className="bg-card rounded-2xl p-8 shadow-card border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="bg-card rounded-2xl p-6 md:p-8 shadow-card border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 >
                   <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-3">{category.title}</h3>
+                  <h3 className="font-display text-lg md:text-xl font-bold text-foreground mb-3 break-words">{category.title}</h3>
                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{category.description}</p>
                   <ul className="space-y-3 mb-6">
                     {category.resources.map((resource) => (
-                      <li key={resource.name} className="flex items-center justify-between gap-2">
-                        <span className="text-sm text-foreground truncate">{resource.name}</span>
+                      <li
+                        key={resource.name}
+                        className="flex flex-wrap items-center justify-between gap-2 min-w-0"
+                      >
+                        <span className="text-sm text-foreground min-w-0 break-words flex-1">
+                          {resource.name}
+                        </span>
                         <Badge variant="secondary" className="text-xs shrink-0">{resource.type}</Badge>
                       </li>
                     ))}
                   </ul>
-                  {category.resources.some((r) => r.url) ? (
-                    <div className="space-y-2">
-                      {category.resources
-                        .filter((r) => r.url)
-                        .map((r) => (
-                          <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="sm" className="w-full justify-between">
-                              {r.type === "Recording" ? "Watch Recording" : "Read Article"}
-                              <ExternalLink className="w-3.5 h-3.5" />
-                            </Button>
-                          </a>
-                        ))}
-                    </div>
-                  ) : (
-                    <Button variant="outline" size="sm" className="w-full" disabled>
-                      <Download className="w-4 h-4" />
-                      Coming Soon
+                  <a href={exploreHref} target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" size="sm" className="w-full justify-between">
+                      {ctaLabel}
+                      <ExternalLink className="w-3.5 h-3.5" />
                     </Button>
-                  )}
+                  </a>
                 </div>
               );
             })}

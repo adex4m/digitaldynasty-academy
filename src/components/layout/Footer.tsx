@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
-import ddiLogo from "@/assets/ddi-logo-new.png";
+import ddiLogoAsset from "@/assets/ddi-logo-mark.jpeg.asset.json";
+const ddiLogo = ddiLogoAsset.url;
 
 const Footer = () => {
   const headingStyle = {

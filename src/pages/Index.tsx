@@ -56,7 +56,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 relative z-10 flex flex-col justify-end" style={{ minHeight: "80svh", paddingTop: "8rem", paddingBottom: "4rem" }}>
           <div className="max-w-3xl space-y-6">
             <p style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#7B4FBF", fontFamily: "'Inter', sans-serif" }}>
-              Digital Dynasty Imperium · Lagos, Nigeria
+              Digitaldynasty Imperium · Lagos, Nigeria
             </p>
             <h1
               className="font-display tracking-tight"
