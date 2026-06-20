@@ -44,7 +44,7 @@ const About = () => {
           --ddi-purple-soft: rgba(123,79,191,0.18);
           font-family: 'Inter', sans-serif;
           background: var(--ddi-cream);
-          color: var(--ddi-dark);
+          color: #FFFFFF;
           overflow-x: hidden;
         }
 
@@ -112,7 +112,7 @@ const About = () => {
         .ddi-page .ddi-h2 {
           font-family: 'Poppins', sans-serif;
           font-size: clamp(30px, 4vw, 52px); font-weight: 700; line-height: 1.1;
-          color: var(--ddi-dark); margin-bottom: 1.5rem;
+          color: #FFFFFF; margin-bottom: 1.5rem;
         }
         .ddi-page .ddi-h2 em {
           font-family: 'Poppins', serif; font-style: italic;
@@ -130,14 +130,14 @@ const About = () => {
         }
         @media (max-width: 720px) { .ddi-page .ddi-sell-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
         .ddi-page .ddi-sell-block .ddi-eyebrow { color: var(--ddi-purple); }
-        .ddi-page .ddi-sell-block .ddi-h2 { color: var(--ddi-dark); }
+        .ddi-page .ddi-sell-block .ddi-h2 { color: #FFFFFF; }
         .ddi-page .ddi-sell-block .ddi-body { color: var(--ddi-muted); }
         .ddi-page .ddi-skills-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
         .ddi-page .ddi-skill-item {
           display: flex; align-items: center; justify-content: space-between;
           padding: 18px 0; border-bottom: 0.5px solid var(--ddi-border);
           font-family: 'Poppins', sans-serif; font-size: clamp(15px, 1.8vw, 18px);
-          font-weight: 500; color: var(--ddi-dark); transition: color 0.2s; cursor: default;
+          font-weight: 500; color: #FFFFFF; transition: color 0.2s; cursor: default;
         }
         .ddi-page .ddi-skill-item:hover { color: var(--ddi-purple); }
         .ddi-page .ddi-skill-arrow { font-size: 12px; color: var(--ddi-muted); transition: color 0.2s, transform 0.2s; }
@@ -157,7 +157,7 @@ const About = () => {
         .ddi-page .ddi-phase-card:hover { background: var(--ddi-purple-soft); }
         .ddi-page .ddi-phase-num { font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ddi-purple-mid); }
         .ddi-page .ddi-phase-weeks { font-size: 11px; color: var(--ddi-muted); font-weight: 400; }
-        .ddi-page .ddi-phase-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; color: var(--ddi-dark); line-height: 1.3; }
+        .ddi-page .ddi-phase-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; color: #FFFFFF; line-height: 1.3; }
         .ddi-page .ddi-phase-desc { font-size: 13.5px; line-height: 1.7; color: var(--ddi-muted); }
 
         .ddi-page .ddi-stats { background: var(--ddi-purple); padding: 3rem 2rem; }
@@ -182,7 +182,7 @@ const About = () => {
           display: flex; align-items: center; justify-content: center;
           margin-bottom: 1.25rem; font-size: 20px; color: var(--ddi-purple);
         }
-        .ddi-page .ddi-why-card h3 { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: var(--ddi-dark); margin-bottom: 0.6rem; }
+        .ddi-page .ddi-why-card h3 { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; margin-bottom: 0.6rem; }
         .ddi-page .ddi-why-card p { font-size: 14px; line-height: 1.75; color: var(--ddi-muted); }
 
         .ddi-page .ddi-who { background: var(--ddi-cream); padding: 6rem 2rem; border-top: 1px solid var(--ddi-border); }
@@ -192,12 +192,12 @@ const About = () => {
         }
         @media (max-width: 720px) { .ddi-page .ddi-who-inner { grid-template-columns: 1fr; gap: 3rem; } }
         .ddi-page .ddi-who .ddi-eyebrow { color: var(--ddi-purple); }
-        .ddi-page .ddi-who .ddi-h2 { color: var(--ddi-dark); margin-bottom: 1rem; }
+        .ddi-page .ddi-who .ddi-h2 { color: #FFFFFF; margin-bottom: 1rem; }
         .ddi-page .ddi-who .ddi-body { color: var(--ddi-muted); margin-bottom: 1.5rem; max-width: 100%; }
         .ddi-page .ddi-values { display: flex; flex-direction: column; gap: 0; margin-top: 1rem; }
         .ddi-page .ddi-value-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 0.5px solid var(--ddi-border); }
         .ddi-page .ddi-value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ddi-purple); margin-top: 7px; flex-shrink: 0; }
-        .ddi-page .ddi-value-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--ddi-dark); margin-bottom: 3px; }
+        .ddi-page .ddi-value-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 3px; }
         .ddi-page .ddi-value-desc { font-size: 13px; line-height: 1.65; color: var(--ddi-muted); }
         .ddi-page .ddi-personas { display: flex; flex-direction: column; gap: 12px; }
         .ddi-page .ddi-persona-chip {
@@ -206,7 +206,7 @@ const About = () => {
           transition: background 0.2s; cursor: default;
         }
         .ddi-page .ddi-persona-chip:hover { background: var(--ddi-purple-soft); }
-        .ddi-page .ddi-persona-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--ddi-dark); }
+        .ddi-page .ddi-persona-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; }
         .ddi-page .ddi-persona-desc { font-size: 13px; color: var(--ddi-muted); line-height: 1.5; }
 
         .ddi-page .ddi-vision { background: var(--ddi-cream); padding: 6rem 2rem; text-align: center; }
@@ -214,7 +214,7 @@ const About = () => {
         .ddi-page .ddi-vision-quote {
           font-family: 'Poppins', serif; font-style: italic;
           font-size: clamp(24px, 3.5vw, 42px); line-height: 1.4;
-          color: var(--ddi-dark); margin-bottom: 1.5rem;
+          color: #FFFFFF; margin-bottom: 1.5rem;
         }
         .ddi-page .ddi-vision-quote span { color: var(--ddi-purple); }
         .ddi-page .ddi-vision-attr { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ddi-muted); }
