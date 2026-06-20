@@ -37,10 +37,11 @@ const About = () => {
           --ddi-purple-soft: #EDE5F8;
           --ddi-dark: #0D0A1A;
           --ddi-dark-2: #1A1530;
-          --ddi-cream: #F7F7F7;
-          --ddi-white: #FFFFFF;
-          --ddi-muted: #6B6580;
-          --ddi-border: rgba(73,34,140,0.12);
+          --ddi-cream: #0D0A1A;
+          --ddi-white: #1A1530;
+          --ddi-muted: rgba(255,255,255,0.65);
+          --ddi-border: rgba(255,255,255,0.08);
+          --ddi-purple-soft: rgba(123,79,191,0.18);
           font-family: 'Inter', sans-serif;
           background: var(--ddi-cream);
           color: var(--ddi-dark);
