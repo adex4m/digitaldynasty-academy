@@ -1,4 +1,4 @@
-// chore: trigger fresh commit sync
+// chore: favicon update sync
 import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
