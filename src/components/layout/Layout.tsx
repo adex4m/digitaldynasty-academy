@@ -1,3 +1,4 @@
+// chore: trigger fresh commit sync
 import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
