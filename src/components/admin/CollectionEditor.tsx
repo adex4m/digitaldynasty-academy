@@ -48,6 +48,9 @@ interface CollectionEditorProps {
 
 type Row = Record<string, any>;
 
+// The admin editor works across several tables, so it uses an untyped client view.
+const db = supabase as unknown as { from: (table: string) => any };
+
 const CollectionEditor = ({
   table,
   singular,
@@ -87,10 +90,10 @@ const CollectionEditor = ({
       payload.is_published = row.is_published ?? true;
 
       if (row.id) {
-        const { error } = await supabase.from(table as never).update(payload).eq("id", row.id);
+        const { error } = await db.from(table).update(payload).eq("id", row.id);
         if (error) throw error;
       } else {
-        const { error } = await supabase.from(table as never).insert(payload);
+        const { error } = await db.from(table).insert(payload);
         if (error) throw error;
       }
     },
@@ -104,7 +107,7 @@ const CollectionEditor = ({
 
   const remove = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from(table as never).delete().eq("id", id);
+      const { error } = await db.from(table).delete().eq("id", id);
       if (error) throw error;
     },
     onSuccess: () => {
