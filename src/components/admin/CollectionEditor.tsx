@@ -66,8 +66,8 @@ const CollectionEditor = ({
   const { data: rows, isLoading } = useQuery({
     queryKey: ["admin", table],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from(table as never)
+      const { data, error } = await db
+        .from(table)
         .select("*")
         .order("sort_order");
       if (error) throw error;
@@ -120,8 +120,8 @@ const CollectionEditor = ({
 
   const togglePublish = useMutation({
     mutationFn: async (row: Row) => {
-      const { error } = await supabase
-        .from(table as never)
+      const { error } = await db
+        .from(table)
         .update({ is_published: !row.is_published })
         .eq("id", row.id);
       if (error) throw error;
