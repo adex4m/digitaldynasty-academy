@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
+import { useResourceCategories, useSiteSettings } from "@/hooks/useSiteContent";
 
 interface Resource {
   name: string;
@@ -16,9 +17,21 @@ interface ResourceCategory {
   title: string;
   description: string;
   resources: Resource[];
+  ctaLabel?: string | null;
+  ctaUrl?: string | null;
 }
 
-const resourceCategories: ResourceCategory[] = [
+const iconMap: Record<string, typeof BookOpen> = {
+  BookOpen,
+  Video,
+  FileText,
+  Wrench,
+  GraduationCap,
+  Lightbulb,
+};
+
+const fallbackCategories: ResourceCategory[] = [
+
   {
     icon: GraduationCap,
     title: "Free Learning Materials",
