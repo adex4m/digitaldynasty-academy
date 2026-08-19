@@ -92,6 +92,25 @@ const fallbackCategories: ResourceCategory[] = [
 ];
 
 const Resources = () => {
+  const { data: dbCategories } = useResourceCategories();
+  const { data: settings } = useSiteSettings();
+
+  const resourceCategories: ResourceCategory[] =
+    dbCategories && dbCategories.length > 0
+      ? dbCategories.map((c) => ({
+          icon: iconMap[c.icon] ?? BookOpen,
+          title: c.title,
+          description: c.description,
+          resources: c.items ?? [],
+          ctaLabel: c.cta_label,
+          ctaUrl: c.cta_url,
+        }))
+      : fallbackCategories;
+
+  const defaultCtaUrl =
+    settings?.resources_default_cta_url ||
+    "https://selar.com/m/digitaldynasty-imperium?category=ddi-digital-products";
+
   return (
     <Layout>
       <SEO
@@ -114,14 +133,15 @@ const Resources = () => {
             {resourceCategories.map((category) => {
               const Icon = category.icon;
               const linkedResource = category.resources.find((r) => r.url);
-              const exploreHref =
-                linkedResource?.url ||
-                "https://selar.com/m/digitaldynasty-imperium?category=ddi-digital-products";
-              const ctaLabel = linkedResource
-                ? linkedResource.type === "Recording"
-                  ? "Watch Recording"
-                  : "Read Article"
-                : "Explore";
+              const exploreHref = category.ctaUrl || linkedResource?.url || defaultCtaUrl;
+              const ctaLabel =
+                category.ctaLabel ||
+                (linkedResource
+                  ? linkedResource.type === "Recording"
+                    ? "Watch Recording"
+                    : "Read Article"
+                  : "Explore");
+
               return (
                 <div
                   key={category.title}
