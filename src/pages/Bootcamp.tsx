@@ -6,13 +6,15 @@ import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 import BootcampCard from "@/components/bootcamp/BootcampCard";
+import { useBootcamps, useBootcampTiers } from "@/hooks/useSiteContent";
+import { bootcampImage } from "@/lib/contentImages";
 
 import webinarImage from "@/assets/webinar-ai-replace.png";
 import socialMediaImg from "@/assets/bootcamp-social-media.jpg";
 import freelanceImg from "@/assets/bootcamp-freelance.jpg";
 import monetizationImg from "@/assets/bootcamp-monetization.jpg";
 
-const tiers = [
+const fallbackTiers = [
   {
     name: "Tier 1",
     title: "Basic Access",
@@ -59,7 +61,7 @@ const tiers = [
   },
 ];
 
-const upcomingBootcamps = [
+const fallbackBootcamps = [
   {
     title: "Social Media Optimization Bootcamp",
     description:
@@ -102,6 +104,36 @@ const upcomingBootcamps = [
 ];
 
 const Bootcamp = () => {
+  const { data: dbTiers } = useBootcampTiers();
+  const { data: dbBootcamps } = useBootcamps();
+
+  const tiers =
+    dbTiers && dbTiers.length > 0
+      ? dbTiers.map((t) => ({
+          name: t.name,
+          title: t.title,
+          price: t.price,
+          highlight: t.is_highlighted,
+          features: t.features ?? [],
+          registerUrl: t.register_url || "https://selar.com/removing-the-l-from-learn",
+        }))
+      : fallbackTiers.map((t) => ({
+          ...t,
+          registerUrl: "https://selar.com/removing-the-l-from-learn",
+        }));
+
+  const upcomingBootcamps =
+    dbBootcamps && dbBootcamps.length > 0
+      ? dbBootcamps.map((b) => ({
+          title: b.title,
+          description: b.description,
+          image: bootcampImage(b.title, b.image_url),
+          status: "contact" as const,
+          highlights: b.highlights ?? [],
+          registerUrl: b.register_url,
+        }))
+      : fallbackBootcamps;
+
   const subscribeUrl =
     "/message?subject=" +
     encodeURIComponent("Future events subscription") +
@@ -177,7 +209,7 @@ const Bootcamp = () => {
                   ))}
                 </ul>
                 <a
-                  href="https://selar.com/removing-the-l-from-learn"
+                  href={tier.registerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

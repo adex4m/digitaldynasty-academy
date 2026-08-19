@@ -14,9 +14,11 @@ import { Course } from "@/data/courses";
 
 interface CourseCardProps {
   course: Course;
+  freeUrl?: string | null;
+  paygUrl?: string | null;
 }
 
-const CourseCard = ({ course }: CourseCardProps) => {
+const CourseCard = ({ course, freeUrl, paygUrl }: CourseCardProps) => {
   const [open, setOpen] = useState(false);
 
   const channels = [
@@ -25,14 +27,14 @@ const CourseCard = ({ course }: CourseCardProps) => {
       icon: Sparkles,
       title: "Free Entry",
       description: "Join our free class at no cost.",
-      url: "https://selar.com/ddifreeclass" as string | null,
+      url: (freeUrl ?? "https://selar.com/ddifreeclass") as string | null,
     },
     {
       key: "payg",
       icon: Wallet,
       title: "Pay-As-You-Go (PAYG)",
       description: "Pay only for what you use.",
-      url: "https://selar.com/ddi-payg" as string | null,
+      url: (paygUrl ?? "https://selar.com/ddi-payg") as string | null,
     },
     {
       key: "paid",

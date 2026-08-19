@@ -8,10 +8,12 @@ interface BootcampCardProps {
   image: string;
   status: "upcoming" | "contact";
   highlights: string[];
+  registerUrl?: string | null;
 }
 
-const BootcampCard = ({ title, description, image, status, highlights }: BootcampCardProps) => {
+const BootcampCard = ({ title, description, image, status, highlights, registerUrl }: BootcampCardProps) => {
   const mailtoUrl = `mailto:support@digitaldynasty.academy?subject=${encodeURIComponent(`Inquiry into ${title}`)}`;
+  const ctaUrl = registerUrl || mailtoUrl;
 
   return (
     <div className="bg-card rounded-2xl overflow-hidden shadow-card border border-border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
@@ -47,10 +49,10 @@ const BootcampCard = ({ title, description, image, status, highlights }: Bootcam
             ))}
           </ul>
         )}
-        <a href={mailtoUrl} target="_blank" rel="noopener noreferrer">
+        <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
           <Button variant="hero" className="w-full">
-            <Mail className="w-4 h-4" />
-            Contact Us for Details
+            {!registerUrl && <Mail className="w-4 h-4" />}
+            {registerUrl ? "Register Now" : "Contact Us for Details"}
           </Button>
         </a>
       </div>

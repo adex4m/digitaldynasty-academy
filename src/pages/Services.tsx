@@ -2,9 +2,30 @@ import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/layout/PageHero";
 import SEO from "@/components/SEO";
 import CourseCard from "@/components/courses/CourseCard";
-import { courses } from "@/data/courses";
+import { courses as fallbackCourses, Course } from "@/data/courses";
+import { useCourses, useSiteSettings } from "@/hooks/useSiteContent";
+import { courseImage } from "@/lib/contentImages";
 
 const Services = () => {
+  const { data: dbCourses } = useCourses();
+  const { data: settings } = useSiteSettings();
+
+  const courses: Course[] =
+    dbCourses && dbCourses.length > 0
+      ? dbCourses.map((c) => ({
+          id: c.slug,
+          title: c.title,
+          description: c.description,
+          whyTake: c.why_take ?? [],
+          beginnerTimeline: c.beginner_timeline,
+          intermediateTimeline: c.intermediate_timeline,
+          thumbnail: courseImage(c.slug, c.thumbnail_url),
+          category: c.category,
+          isCustomRequest: c.is_custom_request,
+          enrollUrl: c.enroll_url ?? undefined,
+        }))
+      : fallbackCourses;
+
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -46,7 +67,12 @@ const Services = () => {
           <h2 id="course-catalog-heading" className="sr-only">Course Catalog</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.map((course) => (
-              <CourseCard key={course.id} course={course} />
+              <CourseCard
+                key={course.id}
+                course={course}
+                freeUrl={settings?.enroll_free_url}
+                paygUrl={settings?.enroll_payg_url}
+              />
             ))}
           </div>
         </div>
