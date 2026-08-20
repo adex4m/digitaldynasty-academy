@@ -523,16 +523,30 @@ const Admin = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8 md:py-12">
-        {!isStaff ? (
+        {!isAllowed ? (
+          <div className="max-w-lg mx-auto text-center bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-card">
+            <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h1 className="font-display text-2xl font-bold text-card-foreground mb-3">
+              Access restricted
+            </h1>
+            <p className="text-sm text-muted-foreground mb-6">
+              This account ({session.user.email}) is not approved for the content manager. An existing
+              admin must approve your email address before you can sign in here.
+            </p>
+            <Button variant="outline" onClick={signOut} className="w-full sm:w-auto">
+              Sign out
+            </Button>
+          </div>
+        ) : !isStaff ? (
           <div className="max-w-lg mx-auto text-center bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-card">
             <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-4" />
             <h1 className="font-display text-2xl font-bold text-card-foreground mb-3">
               No access yet
             </h1>
             <p className="text-sm text-muted-foreground mb-6">
-              Your account ({session.user.email}) doesn't have content permissions yet. If you're the site
-              owner setting this up for the first time, claim admin access below. Otherwise ask an admin to
-              grant you access.
+              Your account ({session.user.email}) is approved but doesn't have content permissions yet.
+              If you're the site owner setting this up for the first time, claim admin access below.
+              Otherwise ask an admin to grant you access.
             </p>
             <Button onClick={claimAdmin} disabled={claiming} className="w-full sm:w-auto">
               {claiming && <Loader2 className="w-4 h-4 animate-spin" />}
