@@ -658,10 +658,16 @@ const Admin = () => {
               </TabsContent>
 
               {isAdmin && (
-                <TabsContent value="team" className="mt-6">
+              {isAdmin && (
+                <TabsContent value="team" className="mt-6 space-y-6">
+                  <AllowlistPanel />
                   <TeamPanel />
                 </TabsContent>
               )}
+
+              <TabsContent value="account" className="mt-6">
+                <AccountPanel />
+              </TabsContent>
             </Tabs>
           </>
         )}
