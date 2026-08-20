@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 import ddiLogoAsset from "@/assets/ddi-logo-mark.jpeg.asset.json";
 const ddiLogo = ddiLogoAsset.url;
 
 const Footer = () => {
+  const { session } = useAuth();
   const headingStyle = {
     fontFamily: "'Poppins', sans-serif",
     fontSize: "13px",
