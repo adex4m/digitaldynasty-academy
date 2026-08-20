@@ -8,6 +8,7 @@ interface AuthContextValue {
   roles: string[];
   isStaff: boolean;
   isAdmin: boolean;
+  isAllowed: boolean;
   loading: boolean;
   refreshRoles: () => Promise<void>;
   signOut: () => Promise<void>;
