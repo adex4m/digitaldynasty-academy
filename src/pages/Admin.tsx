@@ -658,7 +658,6 @@ const Admin = () => {
               </TabsContent>
 
               {isAdmin && (
-              {isAdmin && (
                 <TabsContent value="team" className="mt-6 space-y-6">
                   <AllowlistPanel />
                   <TeamPanel />
