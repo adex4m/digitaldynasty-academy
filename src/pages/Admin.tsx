@@ -258,9 +258,204 @@ const TeamPanel = () => {
   );
 };
 
+const AllowlistPanel = () => {
+  const qc = useQueryClient();
+  const [email, setEmail] = useState("");
+  const [note, setNote] = useState("");
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["admin", "allowlist"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("admin_allowlist").select("*").order("created_at");
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
+
+  const add = useMutation({
+    mutationFn: async () => {
+      const { error } = await supabase
+        .from("admin_allowlist")
+        .insert({ email: email.trim().toLowerCase(), note });
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      toast.success("Email approved for admin access");
+      setEmail("");
+      setNote("");
+      qc.invalidateQueries({ queryKey: ["admin", "allowlist"] });
+    },
+    onError: (e: Error) => toast.error(e.message),
+  });
+
+  const remove = useMutation({
+    mutationFn: async (addr: string) => {
+      const { error } = await supabase.from("admin_allowlist").delete().eq("email", addr);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      toast.success("Email removed");
+      qc.invalidateQueries({ queryKey: ["admin", "allowlist"] });
+    },
+    onError: (e: Error) => toast.error(e.message),
+  });
+
+  return (
+    <div className="p-4 rounded-lg border border-border bg-card space-y-3">
+      <h3 className="font-display font-semibold text-card-foreground">Approved admin emails</h3>
+      <p className="text-sm text-muted-foreground">
+        Only these email addresses can reach the admin area (existing team members always keep their
+        access). Add a second address you control so you can never be locked out.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-2">
+        <Input
+          placeholder="owner@digitaldynasty.academy"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input placeholder="Note (optional)" value={note} onChange={(e) => setNote(e.target.value)} />
+        <Button
+          className="w-full sm:w-auto"
+          onClick={() => add.mutate()}
+          disabled={!email || add.isPending}
+        >
+          <UserPlus className="w-4 h-4" /> Approve
+        </Button>
+      </div>
+      {isLoading ? (
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Loader2 className="w-4 h-4 animate-spin" /> Loading…
+        </div>
+      ) : (
+        <div className="space-y-2 pt-1">
+          {(data ?? []).map((row) => (
+            <div
+              key={row.email}
+              className="flex items-center justify-between gap-3 rounded-md border border-border px-3 py-2"
+            >
+              <div className="min-w-0">
+                <p className="text-sm text-card-foreground break-all">{row.email}</p>
+                {row.note && <p className="text-xs text-muted-foreground">{row.note}</p>}
+              </div>
+              <button
+                type="button"
+                aria-label={`Remove ${row.email}`}
+                onClick={() => remove.mutate(row.email)}
+                className="text-muted-foreground hover:text-destructive"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const AccountPanel = () => {
+  const { user, signOut } = useAuth();
+  const [newEmail, setNewEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [busy, setBusy] = useState<"email" | "password" | null>(null);
+
+  const changeEmail = async () => {
+    setBusy("email");
+    const { error } = await supabase.auth.updateUser(
+      { email: newEmail.trim() },
+      { emailRedirectTo: `${window.location.origin}/admin` }
+    );
+    setBusy(null);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    toast.success(
+      "Confirmation links sent to both your current and new address. The change applies once confirmed."
+    );
+    setNewEmail("");
+  };
+
+  const changePassword = async () => {
+    if (password !== confirm) {
+      toast.error("Those passwords don't match.");
+      return;
+    }
+    setBusy("password");
+    const { error } = await supabase.auth.updateUser({ password });
+    setBusy(null);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    setPassword("");
+    setConfirm("");
+    toast.success("Password updated. Signing you out so you can sign in with it.");
+    await signOut();
+  };
+
+  return (
+    <div className="space-y-4 max-w-xl">
+      <div className="p-4 rounded-lg border border-border bg-card space-y-3">
+        <h3 className="font-display font-semibold text-card-foreground">Email address</h3>
+        <p className="text-sm text-muted-foreground break-all">
+          Currently signed in as {user?.email}
+        </p>
+        <Input
+          placeholder="new@digitaldynasty.academy"
+          type="email"
+          value={newEmail}
+          onChange={(e) => setNewEmail(e.target.value)}
+        />
+        <p className="text-xs text-muted-foreground">
+          Remember to also approve the new address under Team → Approved admin emails.
+        </p>
+        <Button
+          className="w-full sm:w-auto"
+          onClick={changeEmail}
+          disabled={!newEmail || busy === "email"}
+        >
+          {busy === "email" && <Loader2 className="w-4 h-4 animate-spin" />}
+          Change email
+        </Button>
+      </div>
+
+      <div className="p-4 rounded-lg border border-border bg-card space-y-3">
+        <h3 className="font-display font-semibold text-card-foreground">Password</h3>
+        <Input
+          type="password"
+          placeholder="New password"
+          autoComplete="new-password"
+          minLength={8}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="Confirm new password"
+          autoComplete="new-password"
+          minLength={8}
+          value={confirm}
+          onChange={(e) => setConfirm(e.target.value)}
+        />
+        <Button
+          className="w-full sm:w-auto"
+          onClick={changePassword}
+          disabled={!password || busy === "password"}
+        >
+          {busy === "password" && <Loader2 className="w-4 h-4 animate-spin" />}
+          Update password
+        </Button>
+      </div>
+    </div>
+  );
+};
+
 const Admin = () => {
   const navigate = useNavigate();
-  const { session, loading, isStaff, isAdmin, refreshRoles, signOut } = useAuth();
+  const { session, loading, isStaff, isAdmin, isAllowed, refreshRoles, signOut } = useAuth();
   const [claiming, setClaiming] = useState(false);
 
   useEffect(() => {
@@ -328,16 +523,30 @@ const Admin = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8 md:py-12">
-        {!isStaff ? (
+        {!isAllowed ? (
+          <div className="max-w-lg mx-auto text-center bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-card">
+            <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h1 className="font-display text-2xl font-bold text-card-foreground mb-3">
+              Access restricted
+            </h1>
+            <p className="text-sm text-muted-foreground mb-6">
+              This account ({session.user.email}) is not approved for the content manager. An existing
+              admin must approve your email address before you can sign in here.
+            </p>
+            <Button variant="outline" onClick={signOut} className="w-full sm:w-auto">
+              Sign out
+            </Button>
+          </div>
+        ) : !isStaff ? (
           <div className="max-w-lg mx-auto text-center bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-card">
             <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-4" />
             <h1 className="font-display text-2xl font-bold text-card-foreground mb-3">
               No access yet
             </h1>
             <p className="text-sm text-muted-foreground mb-6">
-              Your account ({session.user.email}) doesn't have content permissions yet. If you're the site
-              owner setting this up for the first time, claim admin access below. Otherwise ask an admin to
-              grant you access.
+              Your account ({session.user.email}) is approved but doesn't have content permissions yet.
+              If you're the site owner setting this up for the first time, claim admin access below.
+              Otherwise ask an admin to grant you access.
             </p>
             <Button onClick={claimAdmin} disabled={claiming} className="w-full sm:w-auto">
               {claiming && <Loader2 className="w-4 h-4 animate-spin" />}
@@ -364,6 +573,7 @@ const Admin = () => {
                   <TabsTrigger value="resources">Resources</TabsTrigger>
                   <TabsTrigger value="links">CTA links</TabsTrigger>
                   {isAdmin && <TabsTrigger value="team">Team</TabsTrigger>}
+                  <TabsTrigger value="account">My account</TabsTrigger>
                 </TabsList>
               </div>
 
@@ -448,10 +658,15 @@ const Admin = () => {
               </TabsContent>
 
               {isAdmin && (
-                <TabsContent value="team" className="mt-6">
+                <TabsContent value="team" className="mt-6 space-y-6">
+                  <AllowlistPanel />
                   <TeamPanel />
                 </TabsContent>
               )}
+
+              <TabsContent value="account" className="mt-6">
+                <AccountPanel />
+              </TabsContent>
             </Tabs>
           </>
         )}

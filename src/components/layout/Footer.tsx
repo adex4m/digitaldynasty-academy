@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 import ddiLogoAsset from "@/assets/ddi-logo-mark.jpeg.asset.json";
 const ddiLogo = ddiLogoAsset.url;
 
 const Footer = () => {
+  const { session } = useAuth();
   const headingStyle = {
     fontFamily: "'Poppins', sans-serif",
     fontSize: "13px",
@@ -136,9 +138,12 @@ const Footer = () => {
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>
             © {new Date().getFullYear()} DigitalDynasty Imperium. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
             <Link to="/privacy" style={{ ...linkStyle, fontSize: "13px" }}>Privacy Policy</Link>
             <Link to="/terms" style={{ ...linkStyle, fontSize: "13px" }}>Terms of Service</Link>
+            {session && (
+              <Link to="/admin" style={{ ...linkStyle, fontSize: "13px" }}>Admin Panel</Link>
+            )}
           </div>
         </div>
       </div>

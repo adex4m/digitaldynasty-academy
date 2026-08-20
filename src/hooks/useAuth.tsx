@@ -8,6 +8,7 @@ interface AuthContextValue {
   roles: string[];
   isStaff: boolean;
   isAdmin: boolean;
+  isAllowed: boolean;
   loading: boolean;
   refreshRoles: () => Promise<void>;
   signOut: () => Promise<void>;
@@ -18,28 +19,34 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
   const [roles, setRoles] = useState<string[]>([]);
+  const [isAllowed, setIsAllowed] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const loadRoles = async (userId: string | undefined) => {
+  const loadAccess = async (userId: string | undefined) => {
     if (!userId) {
       setRoles([]);
+      setIsAllowed(false);
       return;
     }
-    const { data } = await supabase.from("user_roles").select("role").eq("user_id", userId);
-    setRoles((data ?? []).map((r) => r.role as string));
+    const [{ data: roleRows }, { data: allowed }] = await Promise.all([
+      supabase.from("user_roles").select("role").eq("user_id", userId),
+      supabase.rpc("is_admin_allowed"),
+    ]);
+    setRoles((roleRows ?? []).map((r) => r.role as string));
+    setIsAllowed(allowed === true);
   };
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_event, newSession) => {
       setSession(newSession);
       setTimeout(() => {
-        loadRoles(newSession?.user?.id).finally(() => setLoading(false));
+        loadAccess(newSession?.user?.id).finally(() => setLoading(false));
       }, 0);
     });
 
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
-      loadRoles(data.session?.user?.id).finally(() => setLoading(false));
+      loadAccess(data.session?.user?.id).finally(() => setLoading(false));
     });
 
     return () => sub.subscription.unsubscribe();
@@ -51,13 +58,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     roles,
     isStaff: roles.includes("admin") || roles.includes("editor"),
     isAdmin: roles.includes("admin"),
+    isAllowed,
     loading,
-    refreshRoles: () => loadRoles(session?.user?.id),
+    refreshRoles: () => loadAccess(session?.user?.id),
     signOut: async () => {
       await supabase.auth.signOut();
       setRoles([]);
+      setIsAllowed(false);
     },
   };
+
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
