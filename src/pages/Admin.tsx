@@ -455,7 +455,7 @@ const AccountPanel = () => {
 
 const Admin = () => {
   const navigate = useNavigate();
-  const { session, loading, isStaff, isAdmin, refreshRoles, signOut } = useAuth();
+  const { session, loading, isStaff, isAdmin, isAllowed, refreshRoles, signOut } = useAuth();
   const [claiming, setClaiming] = useState(false);
 
   useEffect(() => {
