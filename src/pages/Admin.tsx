@@ -573,6 +573,7 @@ const Admin = () => {
                   <TabsTrigger value="resources">Resources</TabsTrigger>
                   <TabsTrigger value="links">CTA links</TabsTrigger>
                   {isAdmin && <TabsTrigger value="team">Team</TabsTrigger>}
+                  <TabsTrigger value="account">My account</TabsTrigger>
                 </TabsList>
               </div>
 
