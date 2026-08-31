@@ -139,9 +139,6 @@ const Footer = () => {
           <div className="flex gap-6 items-center">
             <Link to="/privacy" style={{ ...linkStyle, fontSize: "13px" }}>Privacy Policy</Link>
             <Link to="/terms" style={{ ...linkStyle, fontSize: "13px" }}>Terms of Service</Link>
-            {session && (
-              <Link to="/admin" style={{ ...linkStyle, fontSize: "13px" }}>Admin Panel</Link>
-            )}
           </div>
         </div>
       </div>
