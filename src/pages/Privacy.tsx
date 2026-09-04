@@ -96,10 +96,43 @@ const Privacy = () => {
               {/* Section 5 */}
               <div className="mb-10">
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  5. Your Rights
+                  5. Website Visitor Registration and Newsletter
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">What we collect:</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      When you first visit our website, a welcome form requests your full name, email address, and contact number. We also record the date you accepted this Privacy Policy and our Terms of Service, the page you arrived on, and the referring website. Completing the form is voluntary — you may dismiss it and continue browsing.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Why we collect it:</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Your details are used to respond to enquiries, recommend suitable programs, and keep a record of your acceptance of our policies. Acceptance of the Privacy Policy and Terms of Service is required before your details can be submitted.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Newsletter consent:</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The newsletter option is optional and pre-selected for your convenience. If it remains selected, you consent to receiving updates, promotions, and educational content from DDI. You may clear the option before submitting, or withdraw consent at any time by using the unsubscribe link in any email or by contacting support@digitaldynasty.academy.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Storage and retention:</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Submitted details are stored securely in our managed database and are accessible only to authorised DDI staff through our internal administrative system. They are retained only for as long as necessary to fulfil the purposes above or as required by law.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 6 */}
+              <div className="mb-10">
+                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                  6. Your Rights
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Under the NDPA, you have the right to access your data, request corrections, or object to the processing of your information. For such requests, please contact our Finance & Admin Officer.
+                  Under the NDPA, you have the right to access your data, request corrections, withdraw consent, request deletion, or object to the processing of your information. For such requests, please contact our Finance &amp; Admin Officer at support@digitaldynasty.academy.
                 </p>
               </div>
             </div>
