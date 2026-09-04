@@ -47,6 +47,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <AppRoutes />
+          <VisitorCaptureDialog />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
