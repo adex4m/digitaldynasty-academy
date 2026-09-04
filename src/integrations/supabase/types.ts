@@ -281,6 +281,48 @@ export type Database = {
         }
         Relationships: []
       }
+      visitor_leads: {
+        Row: {
+          agreed_at: string | null
+          agreed_to_terms: boolean
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          newsletter_opt_in: boolean
+          phone: string
+          referrer: string
+          source_path: string
+          updated_at: string
+        }
+        Insert: {
+          agreed_at?: string | null
+          agreed_to_terms?: boolean
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          newsletter_opt_in?: boolean
+          phone: string
+          referrer?: string
+          source_path?: string
+          updated_at?: string
+        }
+        Update: {
+          agreed_at?: string | null
+          agreed_to_terms?: boolean
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          newsletter_opt_in?: boolean
+          phone?: string
+          referrer?: string
+          source_path?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
