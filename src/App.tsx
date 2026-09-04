@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { useRealtimeContent } from "@/hooks/useRealtimeContent";
+import VisitorCaptureDialog from "@/components/VisitorCaptureDialog";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -46,6 +47,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <AppRoutes />
+          <VisitorCaptureDialog />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
