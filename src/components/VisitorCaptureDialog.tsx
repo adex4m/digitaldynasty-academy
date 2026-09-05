@@ -223,9 +223,6 @@ const VisitorCaptureDialog = () => {
           </div>
 
           <div className="flex flex-col-reverse sm:flex-row gap-3 pt-2">
-            <Button type="button" variant="outline" className="w-full" onClick={dismiss}>
-              Maybe later
-            </Button>
             <Button type="submit" className="w-full" disabled={submitting}>
               {submitting ? "Submitting..." : "Continue"}
             </Button>
