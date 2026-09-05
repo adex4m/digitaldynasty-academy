@@ -112,8 +112,12 @@ const VisitorCaptureDialog = () => {
   };
 
   return (
-    <Dialog open={open} onOpenChange={(next) => (next ? setOpen(true) : dismiss())}>
-      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+    <Dialog open={open}>
+      <DialogContent
+        className="sm:max-w-md max-h-[90vh] overflow-y-auto [&>button]:hidden"
+        onEscapeKeyDown={(e) => e.preventDefault()}
+        onPointerDownOutside={(e) => e.preventDefault()}
+      >
         <DialogHeader>
           <DialogTitle className="font-display text-2xl">
             Welcome to Digitaldynasty Imperium
