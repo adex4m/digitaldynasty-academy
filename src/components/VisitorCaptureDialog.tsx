@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import {
@@ -54,10 +53,6 @@ const VisitorCaptureDialog = () => {
     const timer = window.setTimeout(() => setOpen(true), 1200);
     return () => window.clearTimeout(timer);
   }, []);
-
-  const dismiss = () => {
-    setOpen(false);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,8 +111,12 @@ const VisitorCaptureDialog = () => {
   };
 
   return (
-    <Dialog open={open} onOpenChange={(next) => (next ? setOpen(true) : dismiss())}>
-      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+    <Dialog open={open}>
+      <DialogContent
+        className="sm:max-w-md max-h-[90vh] overflow-y-auto [&>button]:hidden"
+        onEscapeKeyDown={(e) => e.preventDefault()}
+        onPointerDownOutside={(e) => e.preventDefault()}
+      >
         <DialogHeader>
           <DialogTitle className="font-display text-2xl">
             Welcome to Digitaldynasty Imperium
@@ -184,13 +183,23 @@ const VisitorCaptureDialog = () => {
                 className="text-sm font-normal leading-relaxed text-muted-foreground"
               >
                 I agree to the{" "}
-                <Link to="/privacy" className="text-primary underline" onClick={dismiss}>
+                <a
+                  href="/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline"
+                >
                   Privacy Policy
-                </Link>{" "}
+                </a>{" "}
                 and{" "}
-                <Link to="/terms" className="text-primary underline" onClick={dismiss}>
+                <a
+                  href="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline"
+                >
                   Terms of Service
-                </Link>
+                </a>
                 . <span className="text-destructive">*</span>
               </Label>
             </div>
@@ -203,20 +212,16 @@ const VisitorCaptureDialog = () => {
                 onCheckedChange={(v) => setNewsletter(v === true)}
                 className="mt-0.5"
               />
-              <Label
+            <Label
                 htmlFor="visitor-newsletter"
                 className="text-sm font-normal leading-relaxed text-muted-foreground"
               >
-                Subscribe me to updates, promotions, and educational content from DDI
-                (optional).
+                Subscribe me to updates, promotions, and educational content from DDI.
               </Label>
             </div>
           </div>
 
           <div className="flex flex-col-reverse sm:flex-row gap-3 pt-2">
-            <Button type="button" variant="outline" className="w-full" onClick={dismiss}>
-              Maybe later
-            </Button>
             <Button type="submit" className="w-full" disabled={submitting}>
               {submitting ? "Submitting..." : "Continue"}
             </Button>
