@@ -184,13 +184,23 @@ const VisitorCaptureDialog = () => {
                 className="text-sm font-normal leading-relaxed text-muted-foreground"
               >
                 I agree to the{" "}
-                <Link to="/privacy" className="text-primary underline" onClick={dismiss}>
+                <a
+                  href="/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline"
+                >
                   Privacy Policy
-                </Link>{" "}
+                </a>{" "}
                 and{" "}
-                <Link to="/terms" className="text-primary underline" onClick={dismiss}>
+                <a
+                  href="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline"
+                >
                   Terms of Service
-                </Link>
+                </a>
                 . <span className="text-destructive">*</span>
               </Label>
             </div>
