@@ -203,12 +203,11 @@ const VisitorCaptureDialog = () => {
                 onCheckedChange={(v) => setNewsletter(v === true)}
                 className="mt-0.5"
               />
-              <Label
+            <Label
                 htmlFor="visitor-newsletter"
                 className="text-sm font-normal leading-relaxed text-muted-foreground"
               >
-                Subscribe me to updates, promotions, and educational content from DDI
-                (optional).
+                Subscribe me to updates, promotions, and educational content from DDI.
               </Label>
             </div>
           </div>
