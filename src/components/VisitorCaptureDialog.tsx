@@ -55,10 +55,6 @@ const VisitorCaptureDialog = () => {
     return () => window.clearTimeout(timer);
   }, []);
 
-  const dismiss = () => {
-    setOpen(false);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
