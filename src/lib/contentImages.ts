@@ -4,7 +4,6 @@ import copywritingImg from "@/assets/courses/copywriting.jpg";
 import graphicDesignImg from "@/assets/courses/graphic-design.jpg";
 import aiVideoImg from "@/assets/courses/ai-video-creation.jpg";
 import videoEditingImg from "@/assets/courses/video-editing.jpg";
-import spokenWordImg from "@/assets/courses/spoken-word-poetry.jpg";
 import vibeCodingImg from "@/assets/courses/vibe-coding.jpg";
 import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.jpg";
 import bootcampSocialImg from "@/assets/bootcamp-social-media.jpg";
@@ -19,7 +18,6 @@ export const courseImageFallbacks: Record<string, string> = {
   "graphic-design": graphicDesignImg,
   "ai-video-creation": aiVideoImg,
   "video-editing": videoEditingImg,
-  "spoken-word-poetry": spokenWordImg,
   "vibe-coding": vibeCodingImg,
   "tutorial-on-demand": tutorialOnDemandImg,
 };

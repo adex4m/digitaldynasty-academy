@@ -4,7 +4,6 @@ import copywritingImg from "@/assets/courses/copywriting.jpg";
 import graphicDesignImg from "@/assets/courses/graphic-design.jpg";
 import aiVideoImg from "@/assets/courses/ai-video-creation.jpg";
 import videoEditingImg from "@/assets/courses/video-editing.jpg";
-import spokenWordImg from "@/assets/courses/spoken-word-poetry.jpg";
 import vibeCodingImg from "@/assets/courses/vibe-coding.jpg";
 import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.jpg";
 
@@ -117,22 +116,6 @@ export const courses: Course[] = [
     thumbnail: videoEditingImg,
     category: "Video",
     enrollUrl: "https://selar.com/ddivideoediting"
-  },
-  {
-    id: "spoken-word-poetry",
-    title: "Spoken Word & Poetry",
-    description: "Express yourself powerfully through the art of spoken word and poetry performance.",
-    whyTake: [
-      "Find your unique voice",
-      "Master performance techniques",
-      "Build confidence on stage",
-      "Connect deeply with audiences"
-    ],
-    beginnerTimeline: "5 weeks + 3 weeks practical",
-    intermediateTimeline: "Custom (based on your goals)",
-    thumbnail: spokenWordImg,
-    category: "Creative",
-    enrollUrl: "https://selar.com/ddispokenword-poetry"
   },
   {
     id: "vibe-coding",
