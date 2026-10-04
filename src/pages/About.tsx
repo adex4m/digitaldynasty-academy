@@ -300,7 +300,6 @@ const About = () => {
                   "Graphic Design",
                   "Video Editing & AI Video Creation",
                   "Web Development",
-                  "Spoken Word & Poetry",
                   "Prompt Engineering (Custom Course)",
                   "Ghostwriting (Custom Course)",
                   "Other Custom Courses (On Demand)",

@@ -12,7 +12,7 @@ const Services = () => {
 
   const courses: Course[] =
     dbCourses && dbCourses.length > 0
-      ? dbCourses.map((c) => ({
+      ? dbCourses.filter((c) => c.slug !== "spoken-word-poetry").map((c) => ({
           id: c.slug,
           title: c.title,
           description: c.description,
