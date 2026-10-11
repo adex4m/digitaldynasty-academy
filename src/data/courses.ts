@@ -1,11 +1,11 @@
-import socialMediaImg from "@/assets/courses/social-media-management.jpg";
-import contentWritingImg from "@/assets/courses/content-writing.jpg";
-import copywritingImg from "@/assets/courses/copywriting.jpg";
-import graphicDesignImg from "@/assets/courses/graphic-design.jpg";
-import aiVideoImg from "@/assets/courses/ai-video-creation.jpg";
-import videoEditingImg from "@/assets/courses/video-editing.jpg";
-import vibeCodingImg from "@/assets/courses/vibe-coding.jpg";
-import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.jpg";
+import socialMediaImg from "@/assets/courses/social-media-management.webp";
+import contentWritingImg from "@/assets/courses/content-writing.webp";
+import copywritingImg from "@/assets/courses/copywriting.webp";
+import graphicDesignImg from "@/assets/courses/graphic-design.webp";
+import aiVideoImg from "@/assets/courses/ai-video-creation.webp";
+import videoEditingImg from "@/assets/courses/video-editing.webp";
+import vibeCodingImg from "@/assets/courses/vibe-coding.webp";
+import tutorialOnDemandImg from "@/assets/courses/tutorial-on-demand.webp";
 
 export interface Course {
   id: string;

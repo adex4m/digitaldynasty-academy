@@ -9,10 +9,10 @@ import BootcampCard from "@/components/bootcamp/BootcampCard";
 import { useBootcamps, useBootcampTiers } from "@/hooks/useSiteContent";
 import { bootcampImage } from "@/lib/contentImages";
 
-import webinarImage from "@/assets/webinar-ai-replace.png";
-import socialMediaImg from "@/assets/bootcamp-social-media.jpg";
-import freelanceImg from "@/assets/bootcamp-freelance.jpg";
-import monetizationImg from "@/assets/bootcamp-monetization.jpg";
+import webinarImage from "@/assets/webinar-ai-replace.webp";
+import socialMediaImg from "@/assets/bootcamp-social-media.webp";
+import freelanceImg from "@/assets/bootcamp-freelance.webp";
+import monetizationImg from "@/assets/bootcamp-monetization.webp";
 
 const fallbackTiers = [
   {
@@ -264,6 +264,10 @@ const Bootcamp = () => {
                 <img
                   src={webinarImage}
                   alt="Will AI Replace You? Webinar by DigitalDynasty Imperium - March 1, 2026"
+                  loading="lazy"
+                  decoding="async"
+                  width={1015}
+                  height={1080}
                   className="w-full aspect-video object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">

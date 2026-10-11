@@ -22,6 +22,7 @@ const BootcampCard = ({ title, description, image, status, highlights, registerU
           src={image}
           alt={title}
           loading="lazy"
+          decoding="async"
           width={1024}
           height={576}
           className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
