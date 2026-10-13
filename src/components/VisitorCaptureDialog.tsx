@@ -87,9 +87,14 @@ const VisitorCaptureDialog = () => {
     setSubmitting(false);
 
     if (error) {
+      const isRateLimited =
+        error.message?.includes("rate_limit_exceeded") ||
+        error.message?.includes("Too many submissions");
       toast({
-        title: "Something went wrong",
-        description: "We couldn't save your details. Please try again.",
+        title: isRateLimited ? "Already submitted" : "Something went wrong",
+        description: isRateLimited
+          ? "You've already shared your details with us recently. Please try again tomorrow."
+          : "We couldn't save your details. Please try again.",
         variant: "destructive",
       });
       return;
