@@ -2,9 +2,17 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
+const ALLOWED_ORIGINS = [
+  'https://digitaldynastyacademy.lovable.app',
+  'https://digitaldynasty.academy',
+  'https://www.digitaldynasty.academy',
+];
+const isAllowedOrigin = (o: string) =>
+  ALLOWED_ORIGINS.includes(o) || /^https:\/\/[a-z0-9-]+\.(lovable\.app|lovableproject\.com)$/.test(o);
+let corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': ALLOWED_ORIGINS[0],
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Vary': 'Origin',
 };
 
 // Simple in-memory rate limiter
@@ -136,9 +144,14 @@ async function getAccessToken(serviceAccountKey: any): Promise<string> {
 }
 
 serve(async (req) => {
+  const origin = req.headers.get('origin') ?? '';
+  corsHeaders = { ...corsHeaders, 'Access-Control-Allow-Origin': isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0] };
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+  if (origin && !isAllowedOrigin(origin)) {
+    return new Response(JSON.stringify({ success: false, error: 'Forbidden' }), { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
   }
 
   try {
