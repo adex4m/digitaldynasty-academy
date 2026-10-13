@@ -2,9 +2,17 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
+const ALLOWED_ORIGINS = [
+  'https://digitaldynastyacademy.lovable.app',
+  'https://digitaldynasty.academy',
+  'https://www.digitaldynasty.academy',
+];
+const isAllowedOrigin = (o: string) =>
+  ALLOWED_ORIGINS.includes(o) || /^https:\/\/[a-z0-9-]+\.(lovable\.app|lovableproject\.com)$/.test(o);
+let corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': ALLOWED_ORIGINS[0],
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Vary': 'Origin',
 };
 
 // Simple in-memory rate limiter
