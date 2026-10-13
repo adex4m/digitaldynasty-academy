@@ -144,9 +144,14 @@ async function getAccessToken(serviceAccountKey: any): Promise<string> {
 }
 
 serve(async (req) => {
+  const origin = req.headers.get('origin') ?? '';
+  corsHeaders = { ...corsHeaders, 'Access-Control-Allow-Origin': isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0] };
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+  if (origin && !isAllowedOrigin(origin)) {
+    return new Response(JSON.stringify({ success: false, error: 'Forbidden' }), { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
   }
 
   try {
