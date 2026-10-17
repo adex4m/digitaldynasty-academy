@@ -122,11 +122,11 @@ export const useSiteSettings = () =>
   useQuery({
     queryKey: ["site_settings"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("site_settings").select("key,value,label");
+      const { data, error } = await supabase.from("site_settings").select("key,value").eq("is_published", true);
       if (error) throw error;
       const map: Record<string, string> = {};
       (data ?? []).forEach((row) => {
-        map[row.key] = row.value;
+        map[row.key] = row.value ?? "";
       });
       return map;
     },
