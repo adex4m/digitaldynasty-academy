@@ -18,17 +18,20 @@ export type Database = {
         Row: {
           created_at: string
           email: string
-          note: string
+          id: string
+          note: string | null
         }
         Insert: {
           created_at?: string
           email: string
-          note?: string
+          id?: string
+          note?: string | null
         }
         Update: {
           created_at?: string
           email?: string
-          note?: string
+          id?: string
+          note?: string | null
         }
         Relationships: []
       }
@@ -40,10 +43,10 @@ export type Database = {
           is_highlighted: boolean
           is_published: boolean
           name: string
-          price: string
+          price: string | null
           register_url: string | null
           sort_order: number
-          title: string
+          title: string | null
           updated_at: string
         }
         Insert: {
@@ -53,10 +56,10 @@ export type Database = {
           is_highlighted?: boolean
           is_published?: boolean
           name: string
-          price?: string
+          price?: string | null
           register_url?: string | null
           sort_order?: number
-          title: string
+          title?: string | null
           updated_at?: string
         }
         Update: {
@@ -66,10 +69,10 @@ export type Database = {
           is_highlighted?: boolean
           is_published?: boolean
           name?: string
-          price?: string
+          price?: string | null
           register_url?: string | null
           sort_order?: number
-          title?: string
+          title?: string | null
           updated_at?: string
         }
         Relationships: []
@@ -77,40 +80,40 @@ export type Database = {
       bootcamps: {
         Row: {
           created_at: string
-          description: string
+          description: string | null
           highlights: string[]
           id: string
           image_url: string | null
           is_published: boolean
           register_url: string | null
           sort_order: number
-          status: string
+          status: string | null
           title: string
           updated_at: string
         }
         Insert: {
           created_at?: string
-          description?: string
+          description?: string | null
           highlights?: string[]
           id?: string
           image_url?: string | null
           is_published?: boolean
           register_url?: string | null
           sort_order?: number
-          status?: string
+          status?: string | null
           title: string
           updated_at?: string
         }
         Update: {
           created_at?: string
-          description?: string
+          description?: string | null
           highlights?: string[]
           id?: string
           image_url?: string | null
           is_published?: boolean
           register_url?: string | null
           sort_order?: number
-          status?: string
+          status?: string | null
           title?: string
           updated_at?: string
         }
@@ -118,13 +121,13 @@ export type Database = {
       }
       courses: {
         Row: {
-          beginner_timeline: string
-          category: string
+          beginner_timeline: string | null
+          category: string | null
           created_at: string
-          description: string
+          description: string | null
           enroll_url: string | null
           id: string
-          intermediate_timeline: string
+          intermediate_timeline: string | null
           is_custom_request: boolean
           is_published: boolean
           slug: string
@@ -135,13 +138,13 @@ export type Database = {
           why_take: string[]
         }
         Insert: {
-          beginner_timeline?: string
-          category?: string
+          beginner_timeline?: string | null
+          category?: string | null
           created_at?: string
-          description?: string
+          description?: string | null
           enroll_url?: string | null
           id?: string
-          intermediate_timeline?: string
+          intermediate_timeline?: string | null
           is_custom_request?: boolean
           is_published?: boolean
           slug: string
@@ -152,13 +155,13 @@ export type Database = {
           why_take?: string[]
         }
         Update: {
-          beginner_timeline?: string
-          category?: string
+          beginner_timeline?: string | null
+          category?: string | null
           created_at?: string
-          description?: string
+          description?: string | null
           enroll_url?: string | null
           id?: string
-          intermediate_timeline?: string
+          intermediate_timeline?: string | null
           is_custom_request?: boolean
           is_published?: boolean
           slug?: string
@@ -170,37 +173,13 @@ export type Database = {
         }
         Relationships: []
       }
-      profiles: {
-        Row: {
-          created_at: string
-          email: string | null
-          full_name: string | null
-          id: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          email?: string | null
-          full_name?: string | null
-          id: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          email?: string | null
-          full_name?: string | null
-          id?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
       resource_categories: {
         Row: {
           created_at: string
           cta_label: string | null
           cta_url: string | null
-          description: string
-          icon: string
+          description: string | null
+          icon: string | null
           id: string
           is_published: boolean
           items: Json
@@ -212,8 +191,8 @@ export type Database = {
           created_at?: string
           cta_label?: string | null
           cta_url?: string | null
-          description?: string
-          icon?: string
+          description?: string | null
+          icon?: string | null
           id?: string
           is_published?: boolean
           items?: Json
@@ -225,8 +204,8 @@ export type Database = {
           created_at?: string
           cta_label?: string | null
           cta_url?: string | null
-          description?: string
-          icon?: string
+          description?: string | null
+          icon?: string | null
           id?: string
           is_published?: boolean
           items?: Json
@@ -239,24 +218,33 @@ export type Database = {
       site_settings: {
         Row: {
           created_at: string
+          description: string | null
+          id: string
+          is_published: boolean
           key: string
-          label: string
+          sort_order: number
           updated_at: string
-          value: string
+          value: string | null
         }
         Insert: {
           created_at?: string
+          description?: string | null
+          id?: string
+          is_published?: boolean
           key: string
-          label?: string
+          sort_order?: number
           updated_at?: string
-          value?: string
+          value?: string | null
         }
         Update: {
           created_at?: string
+          description?: string | null
+          id?: string
+          is_published?: boolean
           key?: string
-          label?: string
+          sort_order?: number
           updated_at?: string
-          value?: string
+          value?: string | null
         }
         Relationships: []
       }
@@ -328,7 +316,6 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      claim_first_admin: { Args: never; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -336,17 +323,9 @@ export type Database = {
         }
         Returns: boolean
       }
-      is_admin_allowed: { Args: never; Returns: boolean }
+      is_cms_admin: { Args: never; Returns: boolean }
+      is_cms_user: { Args: never; Returns: boolean }
       is_staff: { Args: { _user_id: string }; Returns: boolean }
-      list_team: {
-        Args: never
-        Returns: {
-          email: string
-          full_name: string
-          roles: string[]
-          user_id: string
-        }[]
-      }
     }
     Enums: {
       app_role: "admin" | "editor"
